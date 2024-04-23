@@ -59,5 +59,7 @@ matches:
   - trigger: "-gpp"
     replace: "https://github.com/adoniscodes/"
 
+  - trigger: "-gwp"
+    replace: "https://github.com/funcoach/"
 
   # And much more! For more information, visit the docs: https://espanso.org/docs/
