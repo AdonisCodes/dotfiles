@@ -54,7 +54,7 @@ matches:
     replace: "https://replit.com/search?query="
 
   - trigger: "-rpp"
-    replace: "https://replit.com/AdonisCodes"
+    replace: "https://replit.com/@AdonisCodes"
 
   - trigger: ":greet"
     replace: "Greetings!\nSimon Ferns"
