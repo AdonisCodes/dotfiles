@@ -20,4 +20,4 @@ sketchybar --add item space_separator left                             \
                                  label.drawing=off                     \
                                  background.drawing=off                \
                                  script="$PLUGIN_DIR/space_windows.sh" \
-           --subscribe space_separator space_windows_change                           
+           --subscribe space_separator space_windows_change             \                     --subscribe space_separator space_change                            
