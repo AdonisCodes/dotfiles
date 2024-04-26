@@ -1,2 +1,5 @@
 ./github-copilot/hosts.json
 github-copilot/hosts.json
+gcloud/
+firebase/
+configstore/
