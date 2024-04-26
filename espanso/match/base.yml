@@ -68,6 +68,9 @@ matches:
   - trigger: "-gap"
     replace: "https://github.com/Automa-Automations/"
 
+  - trigger: "-ypp"
+    replace: "https://youtube.com/@AdnonisCodes"
+
   - trigger: "-ghpr"
     replace: "{{output}}"
     vars:
