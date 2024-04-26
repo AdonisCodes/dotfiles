@@ -69,7 +69,7 @@ matches:
     replace: "https://github.com/Automa-Automations/"
 
   - trigger: "-ypp"
-    replace: "https://youtube.com/@AdnonisCodes"
+    replace: "https://youtube.com/@AdonisCodes"
 
   - trigger: "-ghpr"
     replace: "{{output}}"
