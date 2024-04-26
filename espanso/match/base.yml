@@ -79,6 +79,14 @@ matches:
         params:
           cmd: "cat ~/.config/espanso/match/outputs/github-pr.txt"
 
+  - trigger: ":calendly"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "cat ~/.config/espanso/match/outputs/calendly.txt"
+
 
 
   # And much more! For more information, visit the docs: https://espanso.org/docs/
