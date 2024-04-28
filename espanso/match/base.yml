@@ -38,7 +38,7 @@ matches:
   - trigger: ":gem"
     replace: "business@simonferns.com"
 
-  - trigger: ":qbah"
+  - trigger: "-replit-history"
     replace: "Hi!\nThis bounty has been open for a long while.\nI would love to help you work on this as it doesn’t seem as complicated.\n\nhttp://blog.simonferns.com\nhttp://case-studies.simonferns.com\nhttps://simonferns.com"
 
   - trigger: "-ys"
