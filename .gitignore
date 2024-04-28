@@ -3,3 +3,4 @@ github-copilot/hosts.json
 gcloud/
 firebase/
 configstore/
+**/*/node_modules/
