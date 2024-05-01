@@ -8,3 +8,6 @@ class PreviousJob:
     created_at: str
     title: str
 
+    def __eq__(self, other):
+        return self.link == other.link
+
