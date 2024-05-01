@@ -4,7 +4,11 @@ import random
 from lib_.notion import get_database_items
 from types_.initial import PreviousJob
 
-args = [i.strip() for i in sys.argv[-1].split(',')]
+if len(sys.argv) < 2:
+    args = []
+else:
+    args = [i.strip() for i in sys.argv[-1].split(',')]
+    args = [arg for arg in args if arg]
 
 notion_response = get_database_items(database_id="073a707c080c471b94d3681edc0301de")
 
@@ -17,11 +21,10 @@ for result in notion_response["results"]:
     title = result['properties']['Name']['title'][0]['plain_text']
     previous_jobs.append(PreviousJob(link=link, tags=tags, created_at=created_at, title=title))
 
-    for tag in args:
-        if tag in tags:
+    for tag in tags:
+        if tag in args or not args:
             emojis = ["🎉", "🚀", "🔥","👏","🎁","🥂", "👍"]
             jobs_to_print.append(f"{random.choice(emojis)}: {title} - {link}")
-
 
 for job in jobs_to_print[:10]:
     print(job)
