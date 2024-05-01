@@ -86,6 +86,14 @@ matches:
   - trigger: "-smww"
     replace: "https://similarweb.com/website/"
 
+  - regex: "-pfw/(?P<tags>.*)-"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "source $HOME/.config/zshrc/dotenv.zsh ; python3 $HOME/.config/espanso/match/scripts/src/past_work.py {{tags}}"
+          shell: zsh
 
 
   # And much more! For more information, visit the docs: https://espanso.org/docs/
