@@ -4,3 +4,5 @@ gcloud/
 firebase/
 configstore/
 **/*/node_modules/
+
+zshrc/dotenv.zsh
