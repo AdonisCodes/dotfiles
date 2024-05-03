@@ -15,10 +15,13 @@ notion_response = get_database_items(database_id="073a707c080c471b94d3681edc0301
 previous_jobs: list[PreviousJob] = []
 jobs_to_print: list[str] = []
 for result in notion_response["results"]:
-    link = result["properties"]["Link"]["url"]
-    tags = [i['name'] for i in result["properties"]["Multi-select"]["multi_select"]]
-    created_at = result['properties'].get("Date", {}).get('date', {}).get('start', "")
-    title = result['properties']['Name']['title'][0]['plain_text']
+    try:
+        link = result["properties"]["Link"]["url"]
+        tags = [i['name'] for i in result["properties"]["Multi-select"]["multi_select"]]
+        created_at = result['properties'].get("Date", {}).get('date', {}).get('start', "")
+        title = result['properties']['Name']['title'][0]['plain_text']
+    except KeyError:
+        continue
 
     previous_job = PreviousJob(link=link, tags=tags, created_at=created_at, title=title)
 
