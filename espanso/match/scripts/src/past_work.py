@@ -31,7 +31,7 @@ for result in notion_response["results"]:
     for tag in tags:
         if tag in args or not args:
             emojis = ["🎉", "🚀", "🔥","👏","🎁","🥂", "👍"]
-            jobs_to_print.append(f"{random.choice(emojis)}: {title} - {link}")
+            jobs_to_print.append(f"{random.choice(emojis)}: {title.strip()} - {link.strip()}")
             break
     
 
