@@ -10,7 +10,6 @@ if len(args) == 2:
 if len(args) > 2:
     arg_str = ", ".join(args[:-1]) + " and " + args[-1]
 
-print(args)
 print(f"""Hello!
 
 I have experience in building apps using {arg_str}.

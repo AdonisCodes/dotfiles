@@ -1,47 +1,89 @@
+import sys
+import random
+import sqlite3
+import json
+from pathlib import Path
+from types_.initial import PreviousJob
+import uuid
+
+# Path to the SQLite database
+DB_PATH = Path.home() / ".config" / "database.db"
+
+def get_tag_ids_for_args(args):
+    # Connect to the SQLite database
+    db = sqlite3.connect(str(DB_PATH))
+    cursor = db.cursor()
+
+    tag_ids = set()
+
+    # Fetch tag IDs for each provided argument
+    for arg in args:
+        cursor.execute("SELECT tag_id FROM Tags WHERE tag_name = ?", (arg,))
+        rows = cursor.fetchall()
+        tag_ids.update([row[0] for row in rows])
+
+    db.close()
+    return tag_ids
+
+def get_job_ids_for_tag_ids(tag_ids):
+    # Connect to the SQLite database
+    db = sqlite3.connect(str(DB_PATH))
+    cursor = db.cursor()
+
+    job_ids = set()
+
+    # Fetch job IDs associated with the provided tag IDs
+    for tag_id in tag_ids:
+        cursor.execute("SELECT job_id FROM JobTags WHERE tag_id = ?", (tag_id,))
+        rows = cursor.fetchall()
+        job_ids.update([row[0] for row in rows])
+
+    db.close()
+    return job_ids
+
+def get_jobs_for_job_ids(job_ids):
+    # Connect to the SQLite database
+    db = sqlite3.connect(str(DB_PATH))
+    cursor = db.cursor()
+
+    jobs = []
+
+    # Fetch job details for the provided job IDs
+    for job_id in job_ids:
+        cursor.execute("SELECT title, link, created_at FROM PreviousJobs WHERE job_id = ?", (job_id,))
+        row = cursor.fetchone()
+        if row:
+            title, link, created_at = row
+            jobs.append(PreviousJob(link=link, tags=[], created_at=created_at, title=title))
+
+    db.close()
+    return jobs
 
 def print_response():
-    import sys
-    import random
-
-    from lib_.notion import get_database_items
-    from types_.initial import PreviousJob
-
     if len(sys.argv) < 2:
         args = []
     else:
         args = [i.strip() for i in sys.argv[-1].split(',')]
-        args = [arg for arg in args if arg]
 
-    notion_response = get_database_items(database_id="073a707c080c471b94d3681edc0301de")
+    # Fetch tag IDs associated with the provided arguments
+    tag_ids = get_tag_ids_for_args(args)
 
-    previous_jobs: list[PreviousJob] = []
-    jobs_to_print: list[str] = []
-    for result in notion_response["results"]:
-        try:
-            link = result["properties"]["Link"]["url"]
-            tags = [i['name'] for i in result["properties"]["Multi-select"]["multi_select"]]
-            created_at = result['properties'].get("Date", {}).get('date', {}).get('start', "")
-            title = result['properties']['Name']['title'][0]['plain_text']
-        except KeyError:
-            continue
+    # Fetch job IDs associated with the fetched tag IDs
+    job_ids = get_job_ids_for_tag_ids(tag_ids)
 
-        previous_job = PreviousJob(link=link, tags=tags, created_at=created_at, title=title)
+    # Fetch job details for the fetched job IDs
+    jobs = get_jobs_for_job_ids(job_ids)
 
-        if previous_job in previous_jobs:
-            continue
-
-        previous_jobs.append(previous_job)
-        
-
-        for tag in tags:
-            if tag in args or not args:
-                emojis = ["🎉", "🚀", "🔥","👏","🎁","🥂", "👍"]
-                jobs_to_print.append(f"{random.choice(emojis)}: {title.strip()} - {link.strip()}")
-                break
-        
+    # Print the processed jobs
+    jobs_to_print = []
+    max_title_length = 60
+    for job in jobs:
+        emojis = ["🎉", "🚀", "🔥", "👏", "🎁", "🥂", "👍"]
+        jobs_to_print.append(f"{random.choice(emojis)}: {job.title.strip()[:max_title_length] + '...' if len(job.title) > max_title_length else job.title.strip()} - {job.link.strip()}")
 
     for job in jobs_to_print[:10]:
         print(job)
 
 if __name__ == "__main__":
     print_response()
+
