@@ -1,42 +1,47 @@
-import sys
-import random
 
-from lib_.notion import get_database_items
-from types_.initial import PreviousJob
+def print_response():
+    import sys
+    import random
 
-if len(sys.argv) < 2:
-    args = []
-else:
-    args = [i.strip() for i in sys.argv[-1].split(',')]
-    args = [arg for arg in args if arg]
+    from lib_.notion import get_database_items
+    from types_.initial import PreviousJob
 
-notion_response = get_database_items(database_id="073a707c080c471b94d3681edc0301de")
+    if len(sys.argv) < 2:
+        args = []
+    else:
+        args = [i.strip() for i in sys.argv[-1].split(',')]
+        args = [arg for arg in args if arg]
 
-previous_jobs: list[PreviousJob] = []
-jobs_to_print: list[str] = []
-for result in notion_response["results"]:
-    try:
-        link = result["properties"]["Link"]["url"]
-        tags = [i['name'] for i in result["properties"]["Multi-select"]["multi_select"]]
-        created_at = result['properties'].get("Date", {}).get('date', {}).get('start', "")
-        title = result['properties']['Name']['title'][0]['plain_text']
-    except KeyError:
-        continue
+    notion_response = get_database_items(database_id="073a707c080c471b94d3681edc0301de")
 
-    previous_job = PreviousJob(link=link, tags=tags, created_at=created_at, title=title)
+    previous_jobs: list[PreviousJob] = []
+    jobs_to_print: list[str] = []
+    for result in notion_response["results"]:
+        try:
+            link = result["properties"]["Link"]["url"]
+            tags = [i['name'] for i in result["properties"]["Multi-select"]["multi_select"]]
+            created_at = result['properties'].get("Date", {}).get('date', {}).get('start', "")
+            title = result['properties']['Name']['title'][0]['plain_text']
+        except KeyError:
+            continue
 
-    if previous_job in previous_jobs:
-        continue
+        previous_job = PreviousJob(link=link, tags=tags, created_at=created_at, title=title)
 
-    previous_jobs.append(previous_job)
-    
+        if previous_job in previous_jobs:
+            continue
 
-    for tag in tags:
-        if tag in args or not args:
-            emojis = ["🎉", "🚀", "🔥","👏","🎁","🥂", "👍"]
-            jobs_to_print.append(f"{random.choice(emojis)}: {title.strip()} - {link.strip()}")
-            break
-    
+        previous_jobs.append(previous_job)
+        
 
-for job in jobs_to_print[:10]:
-    print(job)
+        for tag in tags:
+            if tag in args or not args:
+                emojis = ["🎉", "🚀", "🔥","👏","🎁","🥂", "👍"]
+                jobs_to_print.append(f"{random.choice(emojis)}: {title.strip()} - {link.strip()}")
+                break
+        
+
+    for job in jobs_to_print[:10]:
+        print(job)
+
+if __name__ == "__main__":
+    print_response()

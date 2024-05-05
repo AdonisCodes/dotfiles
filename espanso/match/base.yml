@@ -95,5 +95,23 @@ matches:
           cmd: "source $HOME/.config/zshrc/dotenv.zsh ; python3 $HOME/.config/espanso/match/scripts/src/past_work.py {{tags}}"
           shell: zsh
 
+  - regex: "-pwt/(?P<tags>.*)-"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "source $HOME/.config/zshrc/dotenv.zsh ; python3 $HOME/.config/espanso/match/scripts/src/past_work_template.py {{tags}}"
+          shell: zsh
+
+  - trigger: "-uuid"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "uuidgen"
+
+
 
   # And much more! For more information, visit the docs: https://espanso.org/docs/

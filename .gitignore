@@ -6,3 +6,5 @@ configstore/
 **/*/node_modules/
 
 zshrc/dotenv.zsh
+database.db
+test.py
