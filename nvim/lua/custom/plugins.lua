@@ -22,6 +22,7 @@ local plugins = {
       end
     end
   },
+  { 'wakatime/vim-wakatime', lazy = false },
   {
     "thePrimeagen/vim-be-good",
     cmd = "VimBeGood",
