@@ -23,6 +23,13 @@ local plugins = {
     end
   },
   {
+    "thePrimeagen/vim-be-good",
+    cmd = "VimBeGood",
+    config = function()
+      require("VimBeGood").setup {}
+    end,
+  },
+  {
     "mfussenegger/nvim-dap",
     config = function(_, opts)
       require("core.utils").load_mappings("dap")

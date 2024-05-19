@@ -67,6 +67,8 @@ M.harpoon = {
       end,
       "Go to file 4"
     },
+    ["|"] = {"<cmd> vsplit <CR>"},
+    ["-"] = {"<cmd> split <CR>"},
   }
 }
 
