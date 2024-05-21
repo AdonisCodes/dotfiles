@@ -22,3 +22,5 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+
+export PATH=$PATH:/Users/simonferns/.spicetify
