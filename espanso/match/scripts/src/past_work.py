@@ -78,7 +78,7 @@ def print_response():
     jobs_to_print = []
     max_title_length = 60
     for job in jobs:
-        emojis = ["🎉", "🚀", "🔥", "👏", "🎁", "🥂", "👍"]
+        emojis = ["-", "•", "※", "‡"]
         jobs_to_print.append(f"{random.choice(emojis)}: {job.title.strip()[:max_title_length] + '...' if len(job.title) > max_title_length else job.title.strip()} - {job.link.strip()}")
 
     for job in jobs_to_print[:10]:

@@ -21,6 +21,15 @@ matches:
         params:
           format: "%m/%d/%Y"
 
+  # Print the current date
+  - trigger: ":ndate"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: shell
+        params:
+          cmd: "python -c \"import datetime ; print((datetime.datetime.now() + datetime.timedelta(days=1)).strftime('%m/%d/%Y'))\""
+
   # Print the output of a shell command
   - trigger: ":shell"
     replace: "{{output}}"
