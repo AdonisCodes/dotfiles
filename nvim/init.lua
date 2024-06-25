@@ -1,5 +1,22 @@
 require "core"
 
+local function set_pythonpath()
+    local current_path = vim.fn.getcwd()
+    local venv_path = current_path .. "/venv/bin/activate"
+    local python_version = vim.fn.systemlist('python3 --version')[1]:match('%d+%.%d+')
+
+    if vim.fn.filereadable(venv_path) == 1 then
+        local site_packages_path = current_path .. "/venv/lib/python" .. python_version .. "/site-packages"
+        if vim.fn.isdirectory(site_packages_path) == 1 then
+            vim.env.PYTHONPATH = site_packages_path .. ":" .. (vim.env.PYTHONPATH or "")
+        end
+    else
+        print("No virtual environment found.")
+    end
+end
+
+set_pythonpath()
+
 local custom_init_path = vim.api.nvim_get_runtime_file("lua/custom/init.lua", false)[1]
 
 if custom_init_path then
@@ -32,4 +49,6 @@ if vim.g.neovide then
   vim.g.neovide_cursor_vfx_particle_density = 10
   vim.o.guifont = "Source Code Pro:h10" -- text below applies for VimScript
 end
+
+
 

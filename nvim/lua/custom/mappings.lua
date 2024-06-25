@@ -22,6 +22,9 @@ M.harpoon = {
         local current_file = vim.api.nvim_buf_get_name(0)
         if string.match(current_file, "%.py$") then
           vim.cmd("!black -l 79 " .. current_file)
+
+          -- Reload the file
+          vim.cmd("edit")
         else
           print("Not a Python file!")
         end
