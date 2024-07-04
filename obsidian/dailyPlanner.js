@@ -1,4 +1,17 @@
-let outputPage = ``;
+function formatNumber(num) {
+    if (num >= 1.0e+9) {
+        return (num / 1.0e+9).toFixed(3) + "B";
+    }
+    if (num >= 1.0e+6) {
+        return (num / 1.0e+6).toFixed(3) + "M";
+    }
+    if (num >= 1.0e+3) {
+        return (num / 1.0e+3).toFixed(3) + "K";
+    }
+    return num.toString();
+}
+
+let outputPage = "```yaml\n";
 const currentDate = new Date();
 const referenceDate = new Date("1970-01-01T00:00:00Z");
 
@@ -9,7 +22,14 @@ const startDay = 19907;
 
 const daysSinceStartDay = absoluteDay - startDay;
 
-console.log("Days since start day:", daysSinceStartDay);
+const startDayDateString = new Date(startDay * 1000 * 60 * 60 * 24).toISOString().split("T")[0]
+
+outputPage += `Start Day: "${startDayDateString}"\n`
+outputPage += `Current Day: "${currentDate.toISOString().split("T")[0]}"\n`
+outputPage += `Days Since Start Day: ${daysSinceStartDay}\n`
+
+outputPage += "```\n"
+
 
 function isTriangularNumber(num) {
   let n = 1;
@@ -24,26 +44,79 @@ function isTriangularNumber(num) {
 
 const actionToday = isTriangularNumber(daysSinceStartDay);
 if (actionToday) {
-  outputPage += `
----
+  outputPage += `<details>
+  <summary>F/ Today is the day:</summary>
 
-## Toodaloo
-Practicing a hidden talent, and one that should be frowned upon!
+### F/ Today is the day:
+- [ ] 💨 5 Minutes
+- [ ] 🐢 1 Minute
+- [ ] 💨 5 Minutes
+- [ ] 🐢 1 Minute
+- [ ] 💨 5 Minutes
+- [ ] 🐢 1 Minute
+- [ ] 💨 5 Minutes
+- [ ] 🐢 1 Minute
+- [ ] 💨 5 Minutes
+- [ ] 🐢 1 Minute
+- [ ] 💨 5 Minutes
+- [ ] 🐢 1 Minute
+- [ ] 💨 5 Minutes
+- [ ] 🐢 1 Minute
+- [ ] 💨 5 Minutes
+- [ ] 🐢 1 Minute
+- [ ] 💨 5 Minutes
+- [ ] 🐢 1 Minute
+- [ ] 💨 5 Minutes
+- [ ] 🐢 1 Minute
+</details>
 
-We are tapering off, hence this won't be on every daily page, just the pages that matches the triangular numbering function!
-
-- [ ] 10 Minutes
-- [ ] 1m Break
-- [ ] 10 Minutes
-- [ ] 1m Break
-- [ ] 10 Minutes
-- [ ] 1m Break
-- [ ] 10 Minutes
-- [ ] 1m Break
-- [ ] 10 Minutes
-
----
-`.trim();
+`;
 }
 
-outputPage.trim()
+// Workout Count should work like this:
+// Days from start / 2
+// Pullup Count should work like this:
+// Days from start / 20
+const workoutCount = Math.ceil(daysSinceStartDay / 2);
+const pullupCount = Math.ceil(daysSinceStartDay / 20);
+
+outputPage += `### Workout Count: ${workoutCount}
+- [ ] 🪵 (${workoutCount}x) Push-ups 
+- [ ] 🧎‍♂️ (${workoutCount}x) Sit-ups 
+- [ ] 💪 (${workoutCount}x) Squats 
+- [ ] 🏋️ (${workoutCount}x) Burpees 
+- [ ] 🧘‍♀️ (${workoutCount*2}s) Plank 
+
+`
+
+outputPage += `### Pullup Count: ${pullupCount}
+- [ ] 🙉 (${pullupCount}x) Pullups
+
+`
+
+// Every day we should walk 5 more steps than the previous day.
+// But the app that tracks that can only go up in 100 step increments for the "Goal"
+// So we will keep track of these variables
+// - currentSteps
+// - currentIncrementSteps
+// - nextGoalSteps
+// - stepsTillNextGoal
+// - totalLifetimeSteps (estimated)
+
+const startSteps = 5100;
+const stepIncrementPerDay = 5;
+let currentSteps = startSteps + (stepIncrementPerDay * daysSinceStartDay);
+
+// To calculate lifetime steps we need to add up all the days since start day taking into account the increments
+let totalLifetimeSteps = 0;
+for (let i = 1; i <= daysSinceStartDay; i++) {
+  const stepsToAdd = startSteps + (stepIncrementPerDay * i)
+  totalLifetimeSteps += stepsToAdd;
+}
+outputPage += `### Daily Walking Statistics:
+- [ ] 🏃‍➡️ (${currentSteps}) Today's Steps
+- [ ] 🏃‍♀️ (${formatNumber(totalLifetimeSteps)}) Total Lifetime Steps
+
+`
+
+console.log(outputPage);
