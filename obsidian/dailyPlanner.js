@@ -24,7 +24,10 @@ function isTriangularNumber(num) {
 
 const actionToday = isTriangularNumber(daysSinceStartDay);
 if (actionToday) {
-  outputPage += `## Toodaloo
+  outputPage += `
+---
+
+## Toodaloo
 Practicing a hidden talent, and one that should be frowned upon!
 
 We are tapering off, hence this won't be on every daily page, just the pages that matches the triangular numbering function!
@@ -37,7 +40,10 @@ We are tapering off, hence this won't be on every daily page, just the pages tha
 - [ ] 1m Break
 - [ ] 10 Minutes
 - [ ] 1m Break
-- [ ] 10 Minutes`;
+- [ ] 10 Minutes
+
+---
+`.trim();
 }
 
-outputPage;
+outputPage.trim()
