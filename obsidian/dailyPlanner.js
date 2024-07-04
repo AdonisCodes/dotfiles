@@ -120,3 +120,4 @@ outputPage += `### Daily Walking Statistics:
 `
 
 console.log(outputPage);
+outputPage;
