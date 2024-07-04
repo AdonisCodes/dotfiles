@@ -42,36 +42,6 @@ function isTriangularNumber(num) {
   return false;
 }
 
-const actionToday = isTriangularNumber(daysSinceStartDay);
-if (actionToday) {
-  outputPage += `<details>
-  <summary>F/ Today is the day:</summary>
-
-### F/ Today is the day:
-- [ ] 💨 5 Minutes
-- [ ] 🐢 1 Minute
-- [ ] 💨 5 Minutes
-- [ ] 🐢 1 Minute
-- [ ] 💨 5 Minutes
-- [ ] 🐢 1 Minute
-- [ ] 💨 5 Minutes
-- [ ] 🐢 1 Minute
-- [ ] 💨 5 Minutes
-- [ ] 🐢 1 Minute
-- [ ] 💨 5 Minutes
-- [ ] 🐢 1 Minute
-- [ ] 💨 5 Minutes
-- [ ] 🐢 1 Minute
-- [ ] 💨 5 Minutes
-- [ ] 🐢 1 Minute
-- [ ] 💨 5 Minutes
-- [ ] 🐢 1 Minute
-- [ ] 💨 5 Minutes
-- [ ] 🐢 1 Minute
-</details>
-
-`;
-}
 
 // Workout Count should work like this:
 // Days from start / 2
@@ -118,6 +88,39 @@ outputPage += `### Daily Walking Statistics:
 - [ ] 🏃‍♀️ (${formatNumber(totalLifetimeSteps)}) Total Lifetime Steps
 
 `
+
+
+
+
+
+
+
+
+const actionToday = isTriangularNumber(daysSinceStartDay);
+if (actionToday) {
+  outputPage += `### F/ Today is the day:
+- [ ] 💨 5 Minutes
+- [ ] 🐢 1 Minute
+- [ ] 💨 5 Minutes
+- [ ] 🐢 1 Minute
+- [ ] 💨 5 Minutes
+- [ ] 🐢 1 Minute
+- [ ] 💨 5 Minutes
+- [ ] 🐢 1 Minute
+- [ ] 💨 5 Minutes
+- [ ] 🐢 1 Minute
+- [ ] 💨 5 Minutes
+- [ ] 🐢 1 Minute
+- [ ] 💨 5 Minutes
+- [ ] 🐢 1 Minute
+- [ ] 💨 5 Minutes
+- [ ] 🐢 1 Minute
+- [ ] 💨 5 Minutes
+- [ ] 🐢 1 Minute
+- [ ] 💨 5 Minutes
+- [ ] 🐢 1 Minute
+`;
+}
 
 console.log(outputPage);
 outputPage;
