@@ -89,11 +89,22 @@ outputPage += `### Daily Walking Statistics:
 
 `
 
+// Next day Planning List
+outputPage += `### Next Day Planning
+This is applicable from around **11:30pm - 12:00am**, the planning will prepare us fully for the next day!
+- [ ] 🙏 20 Minutes - Plan out Hourly work tasks
+- [ ] 🍺 2 Minutes - Prepare next day caffeine (4tbsp)
+- [ ] 🧂 2 Minutes - Prepare next day salt water (1tbsp)
+- [ ] 🦷 2 Minutes - Brush Teeth + Tongue + Mouth Palete
+- [ ] 🙆 2 Minutes - Prepare next day clothes
+    - [ ] 🎩 Hat
+    - [ ] 👔 Shirt
+    - [ ] 🧥 Jacket
+    - [ ] 🧦 + 🧤 + 🧣 + 🩳 Accessories
+    - [ ] 👖 Trousers
+    - [ ] 👟 Shoes
 
-
-
-
-
+`
 
 
 const actionToday = isTriangularNumber(daysSinceStartDay);
