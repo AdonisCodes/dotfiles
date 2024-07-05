@@ -97,6 +97,16 @@ This is applicable from around **11:30pm - 12:00am**, the planning will prepare 
 - [ ] 🧂 2 Minutes - Prepare next day salt water (1tbsp)
 - [ ] 🦷 2 Minutes - Brush Teeth + Tongue + Mouth Palete
 - [ ] 🙆 2 Minutes - Prepare next day clothes
+    - [ ] 1️⃣ Pair =====================
+    - [ ] 🎩 Hat
+    - [ ] 👔 Shirt
+    - [ ] 🧥 Jacket
+    - [ ] 🧦 + 🧤 + 🧣 + 🩳 Accessories
+    - [ ] 👖 Trousers
+    - [ ] 👟 Shoes
+    - [ ] 2️⃣ Pair =====================
+    - [ ] 👕 + 🩳 Pajamas
+    - [ ] 3️⃣ Pair =====================
     - [ ] 🎩 Hat
     - [ ] 👔 Shirt
     - [ ] 🧥 Jacket
