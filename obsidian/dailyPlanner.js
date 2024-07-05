@@ -124,7 +124,7 @@ const dailySchedule = `---
 ---
 
 12:20pm - 13:00pm
-- [ ] 20m - Running (${currentSteps} steps) 👆
+- [ ] 20m - Running (${currentSteps} steps) [[#Daily Walking Statistics]]
 - [ ] 10m - 300 Calories
 - [ ] 10m - ${daysSinceStartDay % 2 == 0 ? "🫧 Mop Floor" : "🧹 Sweep Floor"}
 
