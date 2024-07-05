@@ -20,7 +20,7 @@ const absoluteDay = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
 
 const startDay = 19907;
 
-const daysSinceStartDay = absoluteDay - startDay;
+const daysSinceStartDay = absoluteDay - startDay + 1;
 
 const startDayDateString = new Date(startDay * 1000 * 60 * 60 * 24).toISOString().split("T")[0]
 
