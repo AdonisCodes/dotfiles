@@ -100,14 +100,44 @@ const currentDayOfMonth = currentDate.getDate();
 
 const learningItem = learningDailes[currentDayOfMonth - 1];
 
+const sleep = (seconds) => {
+    var waitTill = new Date(new Date().getTime() + seconds * 1000);
+    while(waitTill > new Date()){}
+}
+
+const randomPomodoroBreakTasks = [
+    "🚶‍♂️‍➡️ Walk around (5m)",
+    "🧘 Meditate (5m)",
+    "📚 Read a book (5m)",
+    "📖 Write a blog post (5m)",
+    "🫧 Clean area (5m)",
+    "🏋️ 10 Push-ups, Sit-ups, Squats (5m)",
+    "📷 Watch a video (5m)",
+    "📝 Journaling (5m)",
+    "📷 Take & Annotate Images (5m)",
+]
+
+const pomodoroTaskMaker = (amountOfHours) => {
+    const totalPomodoros = Math.floor(amountOfHours * 2)
+    let pomodoroTasks = "";
+    for (let i = 0; i < totalPomodoros; i++) {
+        // completely sleep for 0.001 seconds
+        let randomTask = randomPomodoroBreakTasks[Math.floor(Math.random() * randomPomodoroBreakTasks.length)]
+        pomodoroTasks += `- [ ] ${randomTask} (${amountOfHours}h)\n`;
+        sleep(0.01)
+    }
+
+    return pomodoroTasks;
+}
+
 const dailySchedule = `---
 
-7am - 8am
-- Learning ${learningItem}
+**7am - 8am**
+- Learning ${learningItem} [[Learning]]
 
 ---
 
-8am - 8:20am
+**8am - 8:20am**
 - 20m
     - [ ] Put Bed away (5m)
     - [ ] New Clothes (4m)
@@ -118,19 +148,29 @@ const dailySchedule = `---
 
 ---
 
-8:20am - 12:20pm
+**8:20am - 12:20pm**
 - [ ] Freelancing Work
+
+**🍅 Pomodoro Tasks:**
+- [ ] 0️⃣ Walk around (5m)
+- [ ] 1️⃣ Clothes out of machine + Hang (5m)
+- [ ] 2️⃣ Cup of Caffeine + Salt Water (5m)
+- [ ] 3️⃣ Blanket into Washing Machine (5m)
+- [ ] 4️⃣ 10x10cm Wall / Floor Plan (5m)
+- [ ] 5️⃣ Watch a video (5m)
+- [ ] 6️⃣ Blanket out of machine + Hang (5m)
+- [ ] 7️⃣ Walk around (5m)
 
 ---
 
-12:20pm - 13:00pm
+**12:20pm - 13:00pm**
 - [ ] 20m - Running (${currentSteps} steps) [[#Daily Walking Statistics]]
 - [ ] 10m - 300 Calories
 - [ ] 10m - ${daysSinceStartDay % 2 == 0 ? "🫧 Mop Floor" : "🧹 Sweep Floor"}
 
 ---
 
-1pm - 1:30pm
+**1pm - 1:30pm**
 - 10m
     - [ ] Cold Shower (3m)
     - [ ] Clothes (3m)
@@ -147,13 +187,13 @@ const dailySchedule = `---
 
 ---
 
-1:30pm - 2:30pm
+**1:30pm - 2:30pm**
 - 1h
-    - [ ] Read English (5m)
-    - [ ] Read Afrikaans (5m)
-    - [ ] Duolingo (5m)
-    - [ ] Meditate (10m)
-    - [ ] Touchtype (10m)
+    - [ ] (${formatNumber(daysSinceStartDay * 5)}m) Read English (5m) 
+    - [ ] (${formatNumber(daysSinceStartDay * 5)}m) Read Afrikaans (5m)
+    - [ ] (${formatNumber(daysSinceStartDay * 5)}m) Duolingo (5m)
+    - [ ] (${formatNumber(daysSinceStartDay * 10)}m) Meditate (10m)
+    - [ ] (${formatNumber(daysSinceStartDay * 10)}m) Touchtype (10m)
     - [ ] Workout (10m)
     - [ ] Brain Dumping (5m)
     - [ ] Learn new Word (5m)
@@ -162,17 +202,23 @@ const dailySchedule = `---
 
 ---
 
-2:30pm - 4:30pm
+**2:30pm - 4:30pm**
 - [ ] 2h - Automa
 
----
-
-4:30pm - 5:30pm
-- [ ] 1h - Learning ${learningItem}
+**🍅 Pomodoro Tasks:**
+${pomodoroTaskMaker(2)}
 
 ---
 
-5:30pm - 6:30pm
+**4:30pm - 5:30pm**
+- [ ] 1h - Learning ${learningItem} [[Learning]]
+
+**🍅 Pomodoro Tasks:**
+${pomodoroTaskMaker(1)}
+
+---
+
+**5:30pm - 6:30pm**
 - [ ] 30m - Food
 - [ ] 10m - Cold Shower
 - [ ] 10m - Wash walls
@@ -180,19 +226,21 @@ const dailySchedule = `---
 
 ---
 
-6:30pm - 7:00pm
+**6:30pm - 7:00pm**
 - [ ] 30m - Meeting
 
 ---
 
-7:00pm - 8:00pm
+**7:00pm - 8:00pm**
 - [ ] Content Creation
 
 ---
 
-8:00pm - 11:30pm
+**8:00pm - 11:30pm**
 - [ ] 3.5h Freelancing Work
-- [ ] 10m Make Bed
+
+**🍅 Pomodoro Tasks:**
+${pomodoroTaskMaker(3)}- [ ] 🛏️ Make Bed (5m)
 
 ---
 
