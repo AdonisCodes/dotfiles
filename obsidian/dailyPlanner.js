@@ -1,14 +1,14 @@
 function formatNumber(num) {
-    if (num >= 1.0e9) {
-        return (num / 1.0e9).toFixed(3) + "B";
-    }
-    if (num >= 1.0e6) {
-        return (num / 1.0e6).toFixed(3) + "M";
-    }
-    if (num >= 1.0e3) {
-        return (num / 1.0e3).toFixed(3) + "K";
-    }
-    return num.toFixed(3).toString();
+  if (num >= 1.0e9) {
+      return (num / 1.0e9).toFixed(3) + "B";
+  }
+  if (num >= 1.0e6) {
+      return (num / 1.0e6).toFixed(3) + "M";
+  }
+  if (num >= 1.0e3) {
+      return (num / 1.0e3).toFixed(3) + "K";
+  }
+  return num.toFixed(3).toString();
 }
 
 let outputPage = "```yaml\n";
@@ -21,11 +21,11 @@ const absoluteDay = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
 
 const startDay = 19907;
 
-const daysSinceStartDay = absoluteDay - startDay + 1;
+const daysSinceStartDay = absoluteDay - startDay;
 
 const startDayDateString = new Date(startDay * 1000 * 60 * 60 * 24)
-    .toISOString()
-    .split("T")[0];
+  .toISOString()
+  .split("T")[0];
 
 outputPage += `Start Day: "${startDayDateString}"\n`;
 outputPage += `Current Day: "${currentDateString}"\n`;
@@ -36,14 +36,14 @@ const totalAmountOfPomodoros =
 outputPage += "```\n";
 
 function isTriangularNumber(num) {
-    let n = 1;
-    while ((n * (n + 1)) / 2 <= num) {
-        if ((n * (n + 1)) / 2 === num) {
-            return true;
-        }
-        n++;
-    }
-    return false;
+  let n = 1;
+  while ((n * (n + 1)) / 2 <= num) {
+      if ((n * (n + 1)) / 2 === num) {
+          return true;
+      }
+      n++;
+  }
+  return false;
 }
 
 // Workout Count should work like this:
@@ -83,8 +83,8 @@ let currentSteps = startSteps + stepIncrementPerDay * daysSinceStartDay;
 // To calculate lifetime steps we need to add up all the days since start day taking into account the increments
 let totalLifetimeSteps = 0;
 for (let i = 1; i <= daysSinceStartDay; i++) {
-    const stepsToAdd = startSteps + stepIncrementPerDay * i;
-    totalLifetimeSteps += stepsToAdd;
+  const stepsToAdd = startSteps + stepIncrementPerDay * i;
+  totalLifetimeSteps += stepsToAdd;
 }
 outputPage += `### Daily Walking Statistics:
 - [ ] 🏃‍➡️ (${currentSteps}) Today's Steps
@@ -92,37 +92,37 @@ outputPage += `### Daily Walking Statistics:
 
 `;
 const learningDailes = [
-    "General Keyboard Shortcuts",
-    "Learning Plan",
-    "Learning Plan",
-    "Obsidian Improvements",
-    "Learning Plan",
-    "Learning Plan",
-    "Learning Plan",
-    "General Keyboard Shortcuts",
-    "Learning Plan",
-    "Learning Plan",
-    "Obsidian Improvements",
-    "Learning Plan",
-    "Obsidian Improvements",
-    "Learning Plan",
-    "General Keyboard Shortcuts",
-    "Learning Plan",
-    "Learning Plan",
-    "Obsidian Improvements",
-    "Learning Plan",
-    "Learning Plan",
-    "Learning Plan",
-    "General Keyboard Shortcuts",
-    "Learning Plan",
-    "Learning Plan",
-    "Obsidian Improvements",
-    "Learning Plan",
-    "Obsidian Improvements",
-    "Obsidian Improvements",
-    "General Keyboard Shortcuts",
-    "Learning Plan",
-    "Learning Plan",
+  "General Keyboard Shortcuts",
+  "Learning Plan",
+  "Learning Plan",
+  "Obsidian Improvements",
+  "Learning Plan",
+  "Learning Plan",
+  "Learning Plan",
+  "General Keyboard Shortcuts",
+  "Learning Plan",
+  "Learning Plan",
+  "Obsidian Improvements",
+  "Learning Plan",
+  "Obsidian Improvements",
+  "Learning Plan",
+  "General Keyboard Shortcuts",
+  "Learning Plan",
+  "Learning Plan",
+  "Obsidian Improvements",
+  "Learning Plan",
+  "Learning Plan",
+  "Learning Plan",
+  "General Keyboard Shortcuts",
+  "Learning Plan",
+  "Learning Plan",
+  "Obsidian Improvements",
+  "Learning Plan",
+  "Obsidian Improvements",
+  "Obsidian Improvements",
+  "General Keyboard Shortcuts",
+  "Learning Plan",
+  "Learning Plan",
 ];
 
 const currentDayOfMonth = currentDate.getDate();
@@ -130,38 +130,38 @@ const currentDayOfMonth = currentDate.getDate();
 const learningItem = learningDailes[currentDayOfMonth - 1];
 
 const sleep = (seconds) => {
-    var waitTill = new Date(new Date().getTime() + seconds * 1000);
-    while (waitTill > new Date()) {}
+  var waitTill = new Date(new Date().getTime() + seconds * 1000);
+  while (waitTill > new Date()) {}
 };
 
 const randomPomodoroBreakTasks = [
-    "🚶‍♂️‍➡️ Walk around (5m)",
-    "🧘 Meditate (5m)",
-    "📚 Read a book (5m)",
-    "📖 Write a blog post (5m)",
-    "🫧 Clean area (5m)",
-    "🏋️ 10 Push-ups, Sit-ups, Squats (5m)",
-    "📷 Watch a video (5m)",
-    "📝 Journaling (5m)",
-    "📷 Take & Annotate Images (5m)",
-    `📗 Learn new Word (5m) [[New Words/${currentDateString}]]`,
-    `📗 Learn new Word (5m) [[New Words/${currentDateString}]]`,
-    `📗 Learn new Word (5m) [[New Words/${currentDateString}]]`
+  "🚶‍♂️‍➡️ Walk around (5m)",
+  "🧘 Meditate (5m)",
+  "📚 Read a book (5m)",
+  "📖 Write a blog post (5m)",
+  "🫧 Clean area (5m)",
+  "🏋️ 10 Push-ups, Sit-ups, Squats (5m)",
+  "📷 Watch a video (5m)",
+  "📝 Journaling (5m)",
+  "📷 Take & Annotate Images (5m)",
+  `📗 Learn new Word (5m) [[New Words/${currentDateString}]]`,
+  `📗 Learn new Word (5m) [[New Words/${currentDateString}]]`,
+  `📗 Learn new Word (5m) [[New Words/${currentDateString}]]`
 ];
 
 const pomodoroTaskMaker = (amountOfHours) => {
-    const totalPomodoros = Math.floor(amountOfHours * 2);
-    let pomodoroTasks = "";
-    for (let i = 0; i < totalPomodoros; i++) {
-        let randomTask =
-            randomPomodoroBreakTasks[
-                Math.floor(Math.random() * randomPomodoroBreakTasks.length)
-            ];
-        pomodoroTasks += `- [ ] ${randomTask}\n`;
-        sleep(0.01);
-    }
+  const totalPomodoros = Math.floor(amountOfHours * 2);
+  let pomodoroTasks = "";
+  for (let i = 0; i < totalPomodoros; i++) {
+      let randomTask =
+          randomPomodoroBreakTasks[
+              Math.floor(Math.random() * randomPomodoroBreakTasks.length)
+          ];
+      pomodoroTasks += `- [ ] ${randomTask}\n`;
+      sleep(0.01);
+  }
 
-    return pomodoroTasks;
+  return pomodoroTasks;
 };
 
 const dailySchedule = `---
@@ -173,12 +173,12 @@ const dailySchedule = `---
 
 **8am - 8:20am**
 - 20m
-    - [ ] Put Bed away (5m)
-    - [ ] New Clothes (4m)
-    - [ ] Wash Hands (2m)
-    - [ ] Cup of Caffeine + Salt Water (2m)
-    - [ ] Brush Teeth (2m)
-    - [ ] Batch Clothes + Blankey into Washing Machine (5m)
+  - [ ] Put Bed away (5m)
+  - [ ] New Clothes (4m)
+  - [ ] Wash Hands (2m)
+  - [ ] Cup of Caffeine + Salt Water (2m)
+  - [ ] Brush Teeth (2m)
+  - [ ] Batch Clothes + Blankey into Washing Machine (5m)
 
 ---
 
@@ -206,33 +206,33 @@ const dailySchedule = `---
 
 **1pm - 1:30pm**
 - 10m
-    - [ ] Cold Shower (3m)
-    - [ ] Clothes (3m)
-    - [ ] Hair (1m)
-    - [ ] Deodorant (1m)
-    - [ ] Nose + Ears (1m)
-    - [ ] Spray (1m)
+  - [ ] Cold Shower (3m)
+  - [ ] Clothes (3m)
+  - [ ] Hair (1m)
+  - [ ] Deodorant (1m)
+  - [ ] Nose + Ears (1m)
+  - [ ] Spray (1m)
 - 10m
-    - [ ] Clean Phone (2m)
-    - [ ] Clean Laptop (3m)
-    - [ ] Clean Keyboard (2m)
-    - [ ] Clean Table (3m)
+  - [ ] Clean Phone (2m)
+  - [ ] Clean Laptop (3m)
+  - [ ] Clean Keyboard (2m)
+  - [ ] Clean Table (3m)
 - [ ] 10m - Do things to drive
 
 ---
 
 **1:30pm - 2:30pm**
 - 1h
-    - [ ] (${formatNumber((daysSinceStartDay * 5) / 60)}H) Read English (5m) 
-    - [ ] (${formatNumber((daysSinceStartDay * 5) / 60)}H) Read Afrikaans (5m)
-    - [ ] (${formatNumber((daysSinceStartDay * 5) / 60)}H) Duolingo (5m)
-    - [ ] (${formatNumber((daysSinceStartDay * 10) / 60)}H) Meditate (10m)
-    - [ ] (${formatNumber((daysSinceStartDay * 10) / 60)}H) Touchtype (10m)
-    - [ ] Workout (10m) [[Workout Count: ${workoutCount}]]
-    - [ ] Brain Dumping (5m) [[Brain Dumps/${currentDateString}]]
-    - [ ] Learn new Word (5m) [[New Words/${currentDateString}]]
-    - [ ] Measure Weight (2m)
-    - [ ] Claim Sweat + Sweatcoin (3m)
+  - [ ] (${formatNumber((daysSinceStartDay * 5) / 60)}H) Read English (5m) 
+  - [ ] (${formatNumber((daysSinceStartDay * 5) / 60)}H) Read Afrikaans (5m)
+  - [ ] (${formatNumber((daysSinceStartDay * 5) / 60)}H) Duolingo (5m)
+  - [ ] (${formatNumber((daysSinceStartDay * 10) / 60)}H) Meditate (10m)
+  - [ ] (${formatNumber((daysSinceStartDay * 10) / 60)}H) Touchtype (10m)
+  - [ ] Workout (10m) [[Workout Count: ${workoutCount}]]
+  - [ ] Brain Dumping (5m) [[Brain Dumps/${currentDateString}]]
+  - [ ] Learn new Word (5m) [[New Words/${currentDateString}]]
+  - [ ] Measure Weight (2m)
+  - [ ] Claim Sweat + Sweatcoin (3m)
 
 ---
 
@@ -288,30 +288,30 @@ This is applicable from around **11:30pm - 12:00am**, the planning will prepare 
 - [ ] 🧂 2 Minutes - Prepare next day salt water (1tbsp)
 - [ ] 🦷 2 Minutes - Brush Teeth + Tongue + Mouth Palete
 - [ ] 🙆 2 Minutes - Prepare next day clothes
-    - [ ] 1️⃣ Pair =====================
-    - [ ] 🎩 Hat
-    - [ ] 👔 Shirt
-    - [ ] 🧥 Jacket
-    - [ ] 🧦 + 🧤 + 🧣 + 🩳 Accessories
-    - [ ] 👖 Trousers
-    - [ ] 👟 Shoes
-    - [ ] 2️⃣ Pair =====================
-    - [ ] 👕 + 🩳 Pajamas
-    - [ ] 3️⃣ Pair =====================
-    - [ ] 🎩 Hat
-    - [ ] 👔 Shirt
-    - [ ] 🧥 Jacket
-    - [ ] 🧦 + 🧤 + 🧣 + 🩳 Accessories
-    - [ ] 👖 Trousers
-    - [ ] 👟 Shoes
+  - [ ] 1️⃣ Pair =====================
+  - [ ] 🎩 Hat
+  - [ ] 👔 Shirt
+  - [ ] 🧥 Jacket
+  - [ ] 🧦 + 🧤 + 🧣 + 🩳 Accessories
+  - [ ] 👖 Trousers
+  - [ ] 👟 Shoes
+  - [ ] 2️⃣ Pair =====================
+  - [ ] 👕 + 🩳 Pajamas
+  - [ ] 3️⃣ Pair =====================
+  - [ ] 🎩 Hat
+  - [ ] 👔 Shirt
+  - [ ] 🧥 Jacket
+  - [ ] 🧦 + 🧤 + 🧣 + 🩳 Accessories
+  - [ ] 👖 Trousers
+  - [ ] 👟 Shoes
 
 `;
 
 const actionToday = isTriangularNumber(daysSinceStartDay);
 if (actionToday) {
-    outputPage += `### M/ Learning (1H):
+  outputPage += `### M/ Learning (1H):
 - [ ] ⇉ Complete Tasks
-    
+
 ### F/ Today is the day (1H):
 - [ ] 💨 5 Minutes
 - [ ] 🐢 1 Minute
