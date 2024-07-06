@@ -89,12 +89,38 @@ outputPage += `### Daily Walking Statistics:
 
 `;
 const learningDailes = [
-    "General Keyboard Shortcuts","Learning Plan","Learning Plan","Obsidian Improvements","Learning Plan","Learning Plan","Learning Plan",
-    "General Keyboard Shortcuts","Learning Plan","Learning Plan","Obsidian Improvements","Learning Plan","Obsidian Improvements","Learning Plan",
-    "General Keyboard Shortcuts","Learning Plan","Learning Plan","Obsidian Improvements","Learning Plan","Learning Plan","Learning Plan",
-    "General Keyboard Shortcuts","Learning Plan","Learning Plan","Obsidian Improvements","Learning Plan","Obsidian Improvements","Obsidian Improvements",
-    "General Keyboard Shortcuts","Learning Plan","Learning Plan"
-]
+    "General Keyboard Shortcuts",
+    "Learning Plan",
+    "Learning Plan",
+    "Obsidian Improvements",
+    "Learning Plan",
+    "Learning Plan",
+    "Learning Plan",
+    "General Keyboard Shortcuts",
+    "Learning Plan",
+    "Learning Plan",
+    "Obsidian Improvements",
+    "Learning Plan",
+    "Obsidian Improvements",
+    "Learning Plan",
+    "General Keyboard Shortcuts",
+    "Learning Plan",
+    "Learning Plan",
+    "Obsidian Improvements",
+    "Learning Plan",
+    "Learning Plan",
+    "Learning Plan",
+    "General Keyboard Shortcuts",
+    "Learning Plan",
+    "Learning Plan",
+    "Obsidian Improvements",
+    "Learning Plan",
+    "Obsidian Improvements",
+    "Obsidian Improvements",
+    "General Keyboard Shortcuts",
+    "Learning Plan",
+    "Learning Plan",
+];
 
 const currentDayOfMonth = currentDate.getDate();
 
@@ -102,8 +128,8 @@ const learningItem = learningDailes[currentDayOfMonth - 1];
 
 const sleep = (seconds) => {
     var waitTill = new Date(new Date().getTime() + seconds * 1000);
-    while(waitTill > new Date()){}
-}
+    while (waitTill > new Date()) {}
+};
 
 const randomPomodoroBreakTasks = [
     "🚶‍♂️‍➡️ Walk around (5m)",
@@ -115,20 +141,22 @@ const randomPomodoroBreakTasks = [
     "📷 Watch a video (5m)",
     "📝 Journaling (5m)",
     "📷 Take & Annotate Images (5m)",
-]
+];
 
 const pomodoroTaskMaker = (amountOfHours) => {
-    const totalPomodoros = Math.floor(amountOfHours * 2)
+    const totalPomodoros = Math.floor(amountOfHours * 2);
     let pomodoroTasks = "";
     for (let i = 0; i < totalPomodoros; i++) {
-        // completely sleep for 0.001 seconds
-        let randomTask = randomPomodoroBreakTasks[Math.floor(Math.random() * randomPomodoroBreakTasks.length)]
-        pomodoroTasks += `- [ ] ${randomTask} (${amountOfHours}h)\n`;
-        sleep(0.01)
+        let randomTask =
+            randomPomodoroBreakTasks[
+                Math.floor(Math.random() * randomPomodoroBreakTasks.length)
+            ];
+        pomodoroTasks += `- [ ] ${randomTask}\n`;
+        sleep(0.01);
     }
 
     return pomodoroTasks;
-}
+};
 
 const dailySchedule = `---
 
