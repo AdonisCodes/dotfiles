@@ -217,11 +217,11 @@ const dailySchedule = `---
 
 **1:30pm - 2:30pm**
 - 1h
-    - [ ] (${formatNumber(daysSinceStartDay * 5)}m) Read English (5m) 
-    - [ ] (${formatNumber(daysSinceStartDay * 5)}m) Read Afrikaans (5m)
-    - [ ] (${formatNumber(daysSinceStartDay * 5)}m) Duolingo (5m)
-    - [ ] (${formatNumber(daysSinceStartDay * 10)}m) Meditate (10m)
-    - [ ] (${formatNumber(daysSinceStartDay * 10)}m) Touchtype (10m)
+    - [ ] (${formatNumber((daysSinceStartDay * 5) / 60)}H) Read English (5m) 
+    - [ ] (${formatNumber((daysSinceStartDay * 5) / 60)}H) Read Afrikaans (5m)
+    - [ ] (${formatNumber((daysSinceStartDay * 5) / 60)}H) Duolingo (5m)
+    - [ ] (${formatNumber((daysSinceStartDay * 10) / 60)}H) Meditate (10m)
+    - [ ] (${formatNumber((daysSinceStartDay * 10) / 60)}H) Touchtype (10m)
     - [ ] Workout (10m)
     - [ ] Brain Dumping (5m)
     - [ ] Learn new Word (5m)
