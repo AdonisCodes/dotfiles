@@ -143,6 +143,8 @@ const randomPomodoroBreakTasks = [
     "📷 Watch a video (5m)",
     "📝 Journaling (5m)",
     "📷 Take & Annotate Images (5m)",
+    "📗 Learn new Word (5m) [[New Words/${currentDate}]]",
+    "📗 Learn new Word (5m) [[New Words/${currentDate}]]",
     "📗 Learn new Word (5m) [[New Words/${currentDate}]]"
 ];
 
