@@ -1,3 +1,7 @@
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 async function main() {
   const randomWord = await fetch("https://random-word-api.vercel.app/api?words=1")
     .then(response => response.json())
@@ -15,9 +19,11 @@ async function main() {
     });
 
   const page = `
-# ${randomWord}
+# The word is: ${capitalizeFirstLetter(randomWord)}
 
-# Wikipedia
+---
+
+# The wikipedia Article
 ${article}
 `;
 
