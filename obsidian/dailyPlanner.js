@@ -144,9 +144,9 @@ const randomPomodoroBreakTasks = [
     "📷 Watch a video (5m)",
     "📝 Journaling (5m)",
     "📷 Take & Annotate Images (5m)",
-    "📗 Learn new Word (5m) [[New Words/${currentDateString}]]",
-    "📗 Learn new Word (5m) [[New Words/${currentDateString}]]",
-    "📗 Learn new Word (5m) [[New Words/${currentDateString}]]"
+    `📗 Learn new Word (5m) [[New Words/${currentDateString}]]`,
+    `📗 Learn new Word (5m) [[New Words/${currentDateString}]]`,
+    `📗 Learn new Word (5m) [[New Words/${currentDateString}]]`
 ];
 
 const pomodoroTaskMaker = (amountOfHours) => {
