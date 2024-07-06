@@ -8,7 +8,7 @@ function formatNumber(num) {
     if (num >= 1.0e3) {
         return (num / 1.0e3).toFixed(3) + "K";
     }
-    return num.toString();
+    return num.toFixed(3).toString();
 }
 
 let outputPage = "```yaml\n";
@@ -29,6 +29,8 @@ const startDayDateString = new Date(startDay * 1000 * 60 * 60 * 24)
 outputPage += `Start Day: "${startDayDateString}"\n`;
 outputPage += `Current Day: "${currentDate.toISOString().split("T")[0]}"\n`;
 outputPage += `Days Since Start Day: ${daysSinceStartDay}\n`;
+
+const totalAmountOfPomodoros = 
 
 outputPage += "```\n";
 
@@ -222,9 +224,9 @@ const dailySchedule = `---
     - [ ] (${formatNumber((daysSinceStartDay * 5) / 60)}H) Duolingo (5m)
     - [ ] (${formatNumber((daysSinceStartDay * 10) / 60)}H) Meditate (10m)
     - [ ] (${formatNumber((daysSinceStartDay * 10) / 60)}H) Touchtype (10m)
-    - [ ] Workout (10m)
-    - [ ] Brain Dumping (5m)
-    - [ ] Learn new Word (5m)
+    - [ ] Workout (10m) [[Workout Count: ${workoutCount}]]
+    - [ ] Brain Dumping (5m) [[Brain Dumps/${currentDate}]]
+    - [ ] Learn new Word (5m) [[New Words/${currentDate}]]
     - [ ] Measure Weight (2m)
     - [ ] Claim Sweat + Sweatcoin (3m)
 
