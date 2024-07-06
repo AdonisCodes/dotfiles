@@ -309,7 +309,10 @@ This is applicable from around **11:30pm - 12:00am**, the planning will prepare 
 
 const actionToday = isTriangularNumber(daysSinceStartDay);
 if (actionToday) {
-    outputPage += `### F/ Today is the day:
+    outputPage += `### M/ Learning (1H):
+- [ ] ⇉ Complete Tasks
+    
+### F/ Today is the day (1H):
 - [ ] 💨 5 Minutes
 - [ ] 🐢 1 Minute
 - [ ] 💨 5 Minutes
@@ -330,6 +333,15 @@ if (actionToday) {
 - [ ] 🐢 1 Minute
 - [ ] 💨 5 Minutes
 - [ ] 🐢 1 Minute
+
+### G/ Winning is the way (1H):
+- [ ] 🎹 Complete Tasks
+
+### MV/ Easily Composition (3H):
+- [ ] 🐳 Complete Tasks
+
+### L/ Motivational Content (1H):
+- [ ] 🤞 Lets get clean!
 `;
 }
 
