@@ -235,7 +235,6 @@ const dailySchedule = `---
 
 **🍅 Pomodoro Tasks:**
 ${pomodoroTaskMaker(2)}
-
 ---
 
 **4:30pm - 5:30pm**
@@ -243,7 +242,6 @@ ${pomodoroTaskMaker(2)}
 
 **🍅 Pomodoro Tasks:**
 ${pomodoroTaskMaker(1)}
-
 ---
 
 **5:30pm - 6:30pm**
