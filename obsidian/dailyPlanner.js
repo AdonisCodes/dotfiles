@@ -15,6 +15,8 @@ let outputPage = "```yaml\n";
 const currentDate = new Date();
 const currentDateString = `${currentDate.toISOString().split("T")[0]}`
 const referenceDate = new Date("1970-01-01T00:00:00Z");
+const tomorrow = new Date(currentDate.getTime() + 24 * 60 * 60 * 1000);
+const tomorrowString = `${tomorrow.toISOString().split("T")[0]}`
 
 const timeDifference = currentDate.getTime() - referenceDate.getTime();
 const absoluteDay = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
@@ -144,9 +146,9 @@ const randomPomodoroBreakTasks = [
   "📷 Watch a video (5m)",
   "📝 Journaling (5m)",
   "📷 Take & Annotate Images (5m)",
-  `📗 Learn new Word (5m) [[New Words/${currentDateString}]]`,
-  `📗 Learn new Word (5m) [[New Words/${currentDateString}]]`,
-  `📗 Learn new Word (5m) [[New Words/${currentDateString}]]`
+  `📗 Learn new Word (5m) [[New Words/${tomorrowString}]]`,
+  `📗 Learn new Word (5m) [[New Words/${tomorrowString}]]`,
+  `📗 Learn new Word (5m) [[New Words/${tomorrowString}]]`
 ];
 
 const pomodoroTaskMaker = (amountOfHours) => {
@@ -229,8 +231,8 @@ const dailySchedule = `---
   - [ ] (${formatNumber((daysSinceStartDay * 10) / 60)}H) Meditate (10m)
   - [ ] (${formatNumber((daysSinceStartDay * 10) / 60)}H) Touchtype (10m)
   - [ ] Workout (10m) [[Workout Count: ${workoutCount}]]
-  - [ ] Brain Dumping (5m) [[Brain Dumps/${currentDateString}]]
-  - [ ] Learn new Word (5m) [[New Words/${currentDateString}]]
+  - [ ] Brain Dumping (5m) [[Brain Dumps/${tomorrowString}]]
+  - [ ] Learn new Word (5m) [[New Words/${tomorrowString}]]
   - [ ] Measure Weight (2m)
   - [ ] Claim Sweat + Sweatcoin (3m)
 
