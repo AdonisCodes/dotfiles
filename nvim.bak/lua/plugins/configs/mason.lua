@@ -1,5 +1,21 @@
 local options = {
-  ensure_installed = { "lua-language-server" }, -- not an option from mason.nvim
+  ensure_installed = { "python-lsp-server",
+        "html-lsp",
+        "css-lsp",
+        "css-variables-language-server",
+        "eslint-lsp",
+        "prettier",
+        "pyright",
+        "emmet-language-server",
+        "typescript-language-server",
+        "tailwindcss-language-server",
+        "prisma-language-server",
+        "lua-language-server",
+        "mypy",
+        "ruff",
+        "black",
+        "debugpy",
+  }, -- not an option from mason.nvim
 
   PATH = "skip",
 

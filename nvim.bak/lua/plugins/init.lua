@@ -74,6 +74,9 @@ local default_plugins = {
     opts = function()
       return require "plugins.configs.treesitter"
     end,
+    ensure_installed = {
+      "vim", "lua", "vimdoc", "html", "css", "javascript", "python", "swift", "kotlin"
+    },
     config = function(_, opts)
       dofile(vim.g.base46_cache .. "syntax")
       require("nvim-treesitter.configs").setup(opts)
@@ -248,6 +251,92 @@ local default_plugins = {
       dofile(vim.g.base46_cache .. "whichkey")
       require("which-key").setup(opts)
     end,
+  },
+
+  -- Nicities
+    {
+    "windwp/nvim-ts-autotag",
+    ft = {
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact",
+    },
+    config = function()
+      require('nvim-ts-autotag').setup()
+    end,
+    event = "VeryLazy"
+  },
+  {
+    "Djancyp/better-comments.nvim",
+    config = function()
+      require("better-comment").Setup({
+        tags = {
+          {
+            name = "TODO",
+            fg = "#348ceb",
+            bg = "",
+            bold = true,
+            virtual_text = ""
+          },
+          {
+            name = "?",
+            fg = "#905fd4",
+            bg = "",
+            bold = true,
+            virtual_text = ""
+          },
+          {
+            name = "!",
+            fg = "#ffcc6c",
+            bg = "",
+            bold = true,
+            virtual_text = ""
+          },
+        }
+      })
+    end,
+    event = "VeryLazy"
+  },
+  {
+    "JoosepAlviste/nvim-ts-context-commentstring",
+  },
+  {
+    'laytan/cloak.nvim',
+    lazy = false,
+    config = function()
+      require('cloak').setup({
+        enabled = true,
+        cloak_character = '*',
+        -- The applied highlight group (colors) on the cloaking, see `:h highlight`.
+        highlight_group = 'Comment',
+        -- Applies the length of the replacement characters for all matched
+        -- patterns, defaults to the length of the matched pattern.
+        cloak_length = nil, -- Provide a number if you want to hide the true length of the value.
+        -- Whether it should try every pattern to find the best fit or stop after the first.
+        try_all_patterns = true,
+        -- Set to true to cloak Telescope preview buffers. (Required feature not in 0.1.x)
+        cloak_telescope = true,
+        -- Re-enable cloak when a matched buffer leaves the window.
+        cloak_on_leave = false,
+        patterns = {
+          {
+            -- Match any file starting with '.env'.
+            -- This can be a table to match multiple file patterns.
+            file_pattern = '.env*',
+            -- Match an equals sign and any character after it.
+            -- This can also be a table of patterns to cloak,
+            -- example: cloak_pattern = { ':.+', '-.+' } for yaml files.
+            cloak_pattern = '=.+',
+            -- A function, table or string to generate the replacement.
+            -- The actual replacement will contain the 'cloak_character'
+            -- where it doesn't cover the original text.
+            -- If left empty the legacy behavior of keeping the first character is retained.
+            replace = nil,
+          },
+        },
+      })
+    end
   },
 }
 
