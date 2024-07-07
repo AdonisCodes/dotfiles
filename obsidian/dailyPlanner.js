@@ -230,7 +230,7 @@ const dailySchedule = `---
   - [ ] (${formatNumber((daysSinceStartDay * 5) / 60)}H) Duolingo (5m)
   - [ ] (${formatNumber((daysSinceStartDay * 10) / 60)}H) Meditate (10m)
   - [ ] (${formatNumber((daysSinceStartDay * 10) / 60)}H) Touchtype (10m)
-  - [ ] Workout (10m) [[Workout Count: ${workoutCount}]]
+  - [ ] Workout (10m) [[#Workout Count: ${workoutCount}]]
   - [ ] Brain Dumping (5m) [[Brain Dumps/${tomorrowString}]]
   - [ ] Learn new Word (5m) [[New Words/${tomorrowString}]]
   - [ ] Measure Weight (2m)
