@@ -148,7 +148,12 @@ const randomPomodoroBreakTasks = [
   "📷 Take & Annotate Images (5m)",
   `📗 Learn new Word (5m) [[New Words/${tomorrowString}]]`,
   `📗 Learn new Word (5m) [[New Words/${tomorrowString}]]`,
-  `📗 Learn new Word (5m) [[New Words/${tomorrowString}]]`
+  `📗 Learn new Word (5m) [[New Words/${tomorrowString}]]`,
+  "🧽 Hands / Nose Cleaning",
+  "🧽 Hands / Nose Cleaning",
+  "🧽 Hands / Nose Cleaning",
+  "🧽 Hands / Nose Cleaning",
+  "🥃 Drink glass of water"
 ];
 
 const pomodoroTaskMaker = (amountOfHours) => {
