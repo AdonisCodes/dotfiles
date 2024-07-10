@@ -174,7 +174,7 @@ const pomodoroTaskMaker = (amountOfHours) => {
 const dailySchedule = `---
 
 **7am - 8am**
-- Learning ${learningItem} [[Learning]]
+- [ ] Learning ${learningItem} [[Learning]]
 
 ---
 
