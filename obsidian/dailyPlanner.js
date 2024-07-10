@@ -266,7 +266,7 @@ ${pomodoroTaskMaker(1)}
 ---
 
 **6:30pm - 7:00pm**
-- [ ] 30m - Meeting
+- [ ] 30m - Meetin
 
 ---
 
