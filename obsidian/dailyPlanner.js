@@ -198,7 +198,7 @@ const dailySchedule = `---
 - [ ] 2️⃣ Cup of Caffeine + Salt Water (5m)
 - [ ] 3️⃣ Blanket into Washing Machine (5m)
 - [ ] 4️⃣ 10x10cm Wall / Floor Plan (5m)
-- [ ] 5️⃣ Watch a video (5m)
+- [ ] 5️⃣ 🥛 Glass of water
 - [ ] 6️⃣ Blanket out of machine + Hang (5m)
 - [ ] 7️⃣ Walk around (5m)
 
@@ -247,14 +247,14 @@ const dailySchedule = `---
 - [ ] 2h - Automa
 
 **🍅 Pomodoro Tasks:**
-${pomodoroTaskMaker(2)}
+${pomodoroTaskMaker(1.5)}- [ ] 🥛 Glass of water
 ---
 
 **4:30pm - 5:30pm**
 - [ ] 1h - Learning ${learningItem} [[Learning]]
 
 **🍅 Pomodoro Tasks:**
-${pomodoroTaskMaker(1)}
+${pomodoroTaskMaker(0.5)}- [ ] 🥛 Glass of water
 ---
 
 **5:30pm - 6:30pm**
@@ -266,20 +266,24 @@ ${pomodoroTaskMaker(1)}
 ---
 
 **6:30pm - 7:00pm**
-- [ ] 30m - Meetin
+- [ ] 30m - Meeting
 
 ---
 
 **7:00pm - 8:00pm**
 - [ ] Content Creation
 
+**🍅 Pomodoro Tasks:**
+- [ ] 🥛 Glass of water
+- [ ] 🥛 Glass of water
 ---
 
 **8:00pm - 11:30pm**
 - [ ] 3.5h Freelancing Work
 
 **🍅 Pomodoro Tasks:**
-${pomodoroTaskMaker(3)}- [ ] 🛏️ Make Bed (5m)
+- [ ] 🥛 Glass of water
+${pomodoroTaskMaker(2.5)}- [ ] 🛏️ Make Bed (5m)
 
 ---
 
