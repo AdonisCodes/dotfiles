@@ -263,8 +263,7 @@ ${pomodoroTaskMaker(0.5)}- [ ] 🥛 Glass of water
 
 **5:30pm - 6:30pm**
 - [ ] 30m - Food
-- [ ] 10m - Cold Shower
-- [ ] 10m - Wash walls
+- [ ] 20m - Cold Shower
 - [ ] 10m - Prep Meeting
 
 ---
@@ -283,6 +282,7 @@ ${pomodoroTaskMaker(0.5)}- [ ] 🥛 Glass of water
 ---
 
 **8:00pm - 11:30pm**
+- [ ] 10m Clean Walls
 - [ ] 3.5h Freelancing Work
 
 **🍅 Pomodoro Tasks:**
