@@ -184,7 +184,7 @@ const dailySchedule = `---
 
 **8am - 8:20am**
 - 20m
-  - [ ] Put Bed away (5m)
+  - [ ] Put Bed away + Open Curtains (5m)
   - [ ] New Clothes (4m)
   - [ ] Wash Hands (2m)
   - [ ] Cup of Caffeine + Salt Water (2m)
