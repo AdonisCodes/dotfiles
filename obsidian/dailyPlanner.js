@@ -138,6 +138,10 @@ const sleep = (seconds) => {
 
 const randomPomodoroBreakTasks = [
   "🚶‍♂️‍➡️ Walk around (5m)",
+  "🚶‍♂️‍➡️ Walk outside (5m)",
+  "🚶‍♂️‍➡️ Walk outside (5m)",
+  "🚶‍♂️‍➡️ Walk outside (5m)",
+  "🚶‍♂️‍➡️ Walk outside (5m)",
   "🧘 Meditate (5m)",
   "📚 Read a book (5m)",
   "📖 Write a blog post (5m)",
