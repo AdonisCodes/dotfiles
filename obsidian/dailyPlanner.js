@@ -248,7 +248,7 @@ const dailySchedule = `---
   - [ ] Learn new Word (5m) [[New Words/${tomorrowString}]]
   - [ ] Measure Weight (2m)
   - [ ] Claim Sweat + Sweatcoin (3m)
-  - [ ] Recalling (Just reading through my vault) (10m)
+  - [ ] Recalling (Just reading through my vault) (10m) / [[Goals-Index]]
   - [ ] Fish Feeding (10m)
   - [ ] Buffer - Easy Method to ensure all habits get completedd (10m)
 
