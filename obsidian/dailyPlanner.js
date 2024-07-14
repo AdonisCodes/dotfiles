@@ -160,8 +160,8 @@ const randomPomodoroBreakTasks = [
   "🥃 Drink glass of water"
 ];
 
-const pomodoroTaskMaker = (amountOfHours) => {
-  const totalPomodoros = Math.floor(amountOfHours * 2);
+const pomodoroTaskMaker = (amountOfHours, pomodoroHourRate=1) => {
+  const totalPomodoros = Math.floor(amountOfHours * pomodoroHourRate);
   let pomodoroTasks = "";
   for (let i = 0; i < totalPomodoros; i++) {
       let randomTask =
