@@ -232,7 +232,7 @@ const dailySchedule = `---
 
 ---
 
-**1:30pm - 2:30pm**
+**1:30pm - 3:00pm**
 - 1h
   - [ ] (${formatNumber((daysSinceStartDay * 5) / 60)}H) Read English (5m) 
   - [ ] (${formatNumber((daysSinceStartDay * 5) / 60)}H) Read Afrikaans (5m)
@@ -244,14 +244,17 @@ const dailySchedule = `---
   - [ ] Learn new Word (5m) [[New Words/${tomorrowString}]]
   - [ ] Measure Weight (2m)
   - [ ] Claim Sweat + Sweatcoin (3m)
+  - [ ] Recalling (Just reading through my vault) (10m)
+  - [ ] Fish Feeding (10m)
+  - [ ] Buffer - Easy Method to ensure all habits get completedd (10m)
 
 ---
 
-**2:30pm - 4:30pm**
+**3:00pm - 4:30pm**
 - [ ] 2h - Automa
 
 **🍅 Pomodoro Tasks:**
-${pomodoroTaskMaker(1.5)}- [ ] 🥛 Glass of water
+${pomodoroTaskMaker(1)}- [ ] 🥛 Glass of water
 ---
 
 **4:30pm - 5:30pm**
