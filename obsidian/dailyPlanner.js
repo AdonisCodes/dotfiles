@@ -11,7 +11,13 @@ function formatNumber(num) {
   return num.toFixed(3).toString();
 }
 
-let outputPage = "```yaml\n";
+let outputPage = `
+---
+background: https://picsum.photos/1000/300
+---
+`;
+
+outputPage += "```yaml\n"
 const currentDate = new Date();
 const currentDateString = `${currentDate.toISOString().split("T")[0]}`
 const referenceDate = new Date("1970-01-01T00:00:00Z");
@@ -32,8 +38,6 @@ const startDayDateString = new Date(startDay * 1000 * 60 * 60 * 24)
 outputPage += `Start Day: "${startDayDateString}"\n`;
 outputPage += `Current Day: "${currentDateString}"\n`;
 outputPage += `Days Since Start Day: ${daysSinceStartDay}\n`;
-
-const totalAmountOfPomodoros = 
 
 outputPage += "```\n";
 
