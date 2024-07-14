@@ -12,7 +12,7 @@ function formatNumber(num) {
 }
 
 let outputPage = `---
-background: https://picsum.photos/1000/300
+banner: https://picsum.photos/1000/300
 ---
 
 `;
