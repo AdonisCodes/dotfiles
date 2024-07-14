@@ -15,6 +15,7 @@ let outputPage = `
 ---
 background: https://picsum.photos/1000/300
 ---
+
 `;
 
 outputPage += "```yaml\n"
