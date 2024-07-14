@@ -11,8 +11,7 @@ function formatNumber(num) {
   return num.toFixed(3).toString();
 }
 
-let outputPage = `
----
+let outputPage = `---
 background: https://picsum.photos/1000/300
 ---
 
