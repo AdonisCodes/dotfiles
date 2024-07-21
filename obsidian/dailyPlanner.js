@@ -65,6 +65,7 @@ outputPage += `### Workout Count: ${workoutCount}
 - [ ] 💪 (${workoutCount}x) Squats 
 - [ ] 🏋️ (${workoutCount}x) Burpees 
 - [ ] 🧘‍♀️ (${workoutCount * 2}s) Plank 
+- [ ] 🏋️ (${pullupCount}) Dumbell Curls
 
 `;
 
