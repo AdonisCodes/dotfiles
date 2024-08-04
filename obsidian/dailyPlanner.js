@@ -205,11 +205,7 @@ const dailySchedule = `---
 - [ ] 0️⃣ Walk around (5m)
 - [ ] 1️⃣ Clothes out of machine + Hang (5m)
 - [ ] 2️⃣ Cup of Caffeine + Salt Water (5m)
-- [ ] 3️⃣ Blanket into Washing Machine (5m)
-- [ ] 4️⃣ 10x10cm Wall / Floor Plan (5m)
-- [ ] 5️⃣ 🥛 Glass of water
-- [ ] 6️⃣ Blanket out of machine + Hang (5m)
-- [ ] 7️⃣ Walk around (5m)
+- [ ] 6️⃣ Blanket into Washing (5m)
 
 ---
 
