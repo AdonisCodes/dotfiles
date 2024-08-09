@@ -1,0 +1,5 @@
+ctrl_panel < k : ~/.config/zshrc/scripts/vol.zsh +5
+ctrl_panel < j : ~/.config/zshrc/scripts/vol.zsh -5
+
+ctrl_panel < g : ~/.config/zshrc/scripts/vol.zsh +100
+ctrl_panel < shift - g : ~/.config/zshrc/scripts/vol.zsh -100

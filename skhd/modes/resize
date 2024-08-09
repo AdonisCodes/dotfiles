@@ -1,5 +1,3 @@
-hyper - r ; resizeyabai
-resizeyabai < r ; default 
 
 resizeyabai < h : yabai -m window --resize left:-25:0; \
                   yabai -m window --resize right:-25:0

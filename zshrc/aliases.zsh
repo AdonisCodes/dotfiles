@@ -12,4 +12,4 @@ alias gpl='git pull'
 alias gsm='git switch main'
 alias gsmp='git switch main && git pull'
 alias gcb='git checkout -b'
-
+alias vol='~/.config/zshrc/scripts/vol.zsh'

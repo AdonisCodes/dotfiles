@@ -3,3 +3,7 @@ resizeyabai, default < alt - k : yabai -m window --focus north
 resizeyabai, default < alt - h : yabai -m window --focus west
 resizeyabai, default < alt - l : yabai -m window --focus east
 
+resizeyabai, default < shift + alt - j : yabai -m window --swap south
+resizeyabai, default < shift + alt - k : yabai -m window --swap north
+resizeyabai, default < shift + alt - h : yabai -m window --swap west
+resizeyabai, default < shift + alt - l : yabai -m window --swap east
