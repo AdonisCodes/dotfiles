@@ -9,3 +9,5 @@ ctrl_panel < l : brightness -v $(echo $(brightness -l 2>/dev/null | awk '/bright
 
 ctrl_panel < shift - h : brightness -v 1
 ctrl_panel < shift - l : brightness -v 0
+
+ctrl_panel < b : blueutil -p toggle 
