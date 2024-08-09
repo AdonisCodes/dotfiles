@@ -13,7 +13,9 @@
 # Swap between resize & default mode
 hyper - r ; resizeyabai
 resizeyabai < r ; default 
+resizeyabai < escape ; default
 
 # Swap between ctrl_panel & default mode
 hyper - c ; ctrl_panel
 ctrl_panel < c ; default 
+ctrl_panel < escape ; default
