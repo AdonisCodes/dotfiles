@@ -28,7 +28,7 @@ matches:
       - name: mydate
         type: shell
         params:
-          cmd: "python -c \"import datetime ; print((datetime.datetime.now() + datetime.timedelta(days=1)).strftime('%m/%d/%Y'))\""
+          cmd: 'python -c "import datetime ; print((datetime.datetime.now() + datetime.timedelta(days=1)).strftime(''%m/%d/%Y''))"'
 
   # Print the output of a shell command
   - trigger: ":shell"
@@ -69,7 +69,7 @@ matches:
 
   - trigger: "-ipp"
     replace: "https://www.instagram.com/adoniscodes_/"
-   
+
   - trigger: ":greet"
     replace: "Greetings!\nSimon Ferns"
 
@@ -130,6 +130,12 @@ matches:
         params:
           cmd: "uuidgen"
 
-
+  - trigger: "-gemu"
+    replace: "business+{{output}}@simonferns.com"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "uuidgen"
 
   # And much more! For more information, visit the docs: https://espanso.org/docs/

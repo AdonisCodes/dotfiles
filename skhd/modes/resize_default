@@ -1,0 +1,5 @@
+resizeyabai, default < alt - j : yabai -m window --focus south
+resizeyabai, default < alt - k : yabai -m window --focus north
+resizeyabai, default < alt - h : yabai -m window --focus west
+resizeyabai, default < alt - l : yabai -m window --focus east
+

@@ -1,0 +1,17 @@
+hyper - r ; resizeyabai
+resizeyabai < r ; default 
+
+resizeyabai < h : yabai -m window --resize left:-25:0; \
+                  yabai -m window --resize right:-25:0
+resizeyabai < j : yabai -m window --resize bottom:0:25; \
+                  yabai -m window --resize top:0:25
+resizeyabai < k : yabai -m window --resize top:0:-25; \
+                  yabai -m window --resize bottom:0:-25
+resizeyabai < l : yabai -m window --resize right:25:0; \
+                  yabai -m window --resize left:25:0
+
+# balance out tree of windows (resize to occupy same area)
+resizeyabai < e : yabai -m space --balance
+
+# Maximize the current window
+resizeyabai < m : yabai -m window --toggle zoom-fullscreen
