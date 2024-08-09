@@ -11,3 +11,5 @@ ctrl_panel < shift - h : brightness -v 1
 ctrl_panel < shift - l : brightness -v 0
 
 ctrl_panel < b : blueutil -p toggle 
+
+ctrl_panel < w : ~/.config/zshrc/scripts/wifi.zsh
