@@ -5,7 +5,7 @@
 :: default : borders active_color=0xFFA15685 inactive_color=0xff494d64 width=5.0 & 
 
 # -- Mac Control Panel mode --
-:: ctrl_panel : borders active_color=0xff03FF67 inactive_color=0xff494d64 width=5.0 & 
+:: ctrl_panel : borders active_color=0xff03FF67 inactive_color=0xff03FF67 width=5.0 & 
 
 # ------ ------ ------ ------ ------
 
