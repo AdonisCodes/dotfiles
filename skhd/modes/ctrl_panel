@@ -1,5 +1,11 @@
 ctrl_panel < k : ~/.config/zshrc/scripts/vol.zsh +5
 ctrl_panel < j : ~/.config/zshrc/scripts/vol.zsh -5
 
-ctrl_panel < g : ~/.config/zshrc/scripts/vol.zsh +100
-ctrl_panel < shift - g : ~/.config/zshrc/scripts/vol.zsh -100
+ctrl_panel < shift - k : ~/.config/zshrc/scripts/vol.zsh +100
+ctrl_panel < shift - j : ~/.config/zshrc/scripts/vol.zsh -100
+
+ctrl_panel < h : brightness -v $(echo $(brightness -l 2>/dev/null | awk '/brightness/ {print $4}') + 0.1 | bc)
+ctrl_panel < l : brightness -v $(echo $(brightness -l 2>/dev/null | awk '/brightness/ {print $4}') - 0.1 | bc)
+
+ctrl_panel < shift - h : brightness -v 1
+ctrl_panel < shift - l : brightness -v 0
