@@ -6,7 +6,7 @@ local app_icons = require("helpers.app_icons")
 local spaces = {}
 
 local spaces_indicator = sbar.add("item", {
-	padding_left = 3,
+	padding_left = -3,
 	padding_right = 3,
 	icon = {
 		padding_left = 8,
