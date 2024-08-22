@@ -1,12 +1,12 @@
 function formatNumber(num) {
   if (num >= 1.0e9) {
-      return (num / 1.0e9).toFixed(3) + "B";
+    return (num / 1.0e9).toFixed(3) + "B";
   }
   if (num >= 1.0e6) {
-      return (num / 1.0e6).toFixed(3) + "M";
+    return (num / 1.0e6).toFixed(3) + "M";
   }
   if (num >= 1.0e3) {
-      return (num / 1.0e3).toFixed(3) + "K";
+    return (num / 1.0e3).toFixed(3) + "K";
   }
   return num.toFixed(3).toString();
 }
@@ -44,10 +44,10 @@ outputPage += "```\n";
 function isTriangularNumber(num) {
   let n = 1;
   while ((n * (n + 1)) / 2 <= num) {
-      if ((n * (n + 1)) / 2 === num) {
-          return true;
-      }
-      n++;
+    if ((n * (n + 1)) / 2 === num) {
+      return true;
+    }
+    n++;
   }
   return false;
 }
@@ -138,7 +138,7 @@ const learningItem = learningDailes[currentDayOfMonth - 1];
 
 const sleep = (seconds) => {
   var waitTill = new Date(new Date().getTime() + seconds * 1000);
-  while (waitTill > new Date()) {}
+  while (waitTill > new Date()) { }
 };
 
 const randomPomodoroBreakTasks = [
@@ -165,16 +165,16 @@ const randomPomodoroBreakTasks = [
   "🥃 Drink glass of water"
 ];
 
-const pomodoroTaskMaker = (amountOfHours, pomodoroHourRate=1) => {
+const pomodoroTaskMaker = (amountOfHours, pomodoroHourRate = 1) => {
   const totalPomodoros = Math.floor(amountOfHours * pomodoroHourRate);
   let pomodoroTasks = "";
   for (let i = 0; i < totalPomodoros; i++) {
-      let randomTask =
-          randomPomodoroBreakTasks[
-              Math.floor(Math.random() * randomPomodoroBreakTasks.length)
-          ];
-      pomodoroTasks += `- [ ] ${randomTask}\n`;
-      sleep(0.01);
+    let randomTask =
+      randomPomodoroBreakTasks[
+      Math.floor(Math.random() * randomPomodoroBreakTasks.length)
+      ];
+    pomodoroTasks += `- [ ] ${randomTask}\n`;
+    sleep(0.01);
   }
 
   return pomodoroTasks;
@@ -363,5 +363,83 @@ if (actionToday) {
 `;
 }
 
-console.log(outputPage);
-outputPage;
+
+
+
+
+const newOutputPage = `
+### Workout Count: ${workoutCount}
+- [ ] 🪵 (${workoutCount}x) Push-ups 
+- [ ] 🧎‍♂️ (${workoutCount}x) Sit-ups 
+- [ ] 💪 (${workoutCount}x) Squats 
+- [ ] 🏋️ (${workoutCount}x) Burpees 
+- [ ] 🧘‍♀️ (${workoutCount * 2}s) Plank 
+- [ ] 🏋️ (${pullupCount}) Dumbell Curls
+- [ ] 🙉 (${pullupCount}x) Pullups
+
+**8:00 AM - 8:30 AM**
+- [ ] Put bed away (3m)
+- [ ] New clothes (5m)
+- [ ] salt + steep Caffè (5m)
+- [ ] Brush teeth (2m)
+- [ ] Wash hands (2m)
+- [ ] Clothes into washing machine (3m)
+- [ ] Walk outside (10m)
+
+**8:30 AM - 10:30 AM**
+- [ ] One of the following (2h):
+  - Swift learning (odd days)
+  - Productivity learn (2 even days)
+  - Management learn (1 even day)
+
+**10:30 AM - 12:30 PM**
+- [ ] Freelance ($15h)  (1f) (2h)
+
+**12:30 PM - 1:00 PM**
+- [ ] Sweeping (10m)
+- [ ] Mop or walls (10m)
+- [ ] Desk/PC (10m)
+
+**1:00 PM - 1:30 PM**
+- [ ] Bath (15m)
+- [ ] Deo (5m)
+- [ ] Hair (3m)
+- [ ] Teeth + Hands (3m)
+- [ ] Prep Drive gear (9m)
+
+**1:35 PM - 2:30 PM** 
+  - [ ] (${formatNumber((daysSinceStartDay * 5) / 60)}H) Reading (5m)
+  - [ ] (${formatNumber((daysSinceStartDay * 10) / 60)}H) Meditate (10m)
+  - [ ] (${formatNumber((daysSinceStartDay * 5) / 60)}H) Duolingo (5m)
+  - [ ] (${formatNumber((daysSinceStartDay * 10) / 60)}H) Touchtype (10m)
+  - [ ] Brain Dumping (5m) [[Brain Dumps/${tomorrowString}]]
+  - [ ] Learn new Word (5m) [[New Words/${tomorrowString}]]
+  - [ ] Workout (10m) [[#Workout Count: ${workoutCount}]]
+  - [ ] Measure Weight (2m)
+  - [ ] Claim Sweat + Sweatcoin (3m)
+
+**2:30 PM - 4:30 PM**
+- [ ] Freelance Raya (1f) (2h)
+
+**4:30 PM - 5:00 PM**
+- [ ] 2.1k calories (30m)
+
+**5:00 PM - 8:00 PM**
+- [ ] Automa 5 commits (3h)
+
+**8:00 PM - 12:00 AM**
+- [ ] Raya Meeting (30m)
+- [ ] Freelance Raya (1/f) (2h)
+- [ ] Freelance Raya (1/f) (2h)
+
+**12:00 AM - 1:00 AM**
+- [ ] Explore things (30m)
+- [ ] Do planning Tasks (30m)
+	- [ ] Plan out Next Day + Task list on [[Todos]] (20m)
+	- [ ] Plan out Clothes for the next day (3m)
+	- [ ] Brush Teeth + Hands (4m)
+	- [ ] Make Bed (3m)
+`
+
+console.log(newOutputPage)
+newOutputPage;
