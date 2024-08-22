@@ -1,3 +1,5 @@
+export EDITOR=nvim
+
 alias ll='ls -alF'
 alias lvim="/Users/simonferns/.local/bin/lvim"
 alias simon-bootstrap="~/.config/zshrc/bootstrap.zsh"

@@ -13,3 +13,7 @@ ctrl_panel < shift - l : brightness -v 0
 ctrl_panel < b : blueutil -p toggle 
 
 ctrl_panel < w : ~/.config/zshrc/scripts/wifi.zsh
+
+ctrl_panel < o : if [ "$(ls /tmp | grep "obs-toggle-flag")" ]; then; rm -rf "/tmp/obs-toggle-flag"; else; touch "/tmp/obs-toggle-flag"; fi
+ctrl_panel < shift - o : /Users/simonferns/.local/bin/obs-cli virtualcam toggle
+ctrl_panel < ctrl - o : /Users/simonferns/.local/bin/obs-cli scene switch 'Front Cam' ; /Users/simonferns/.local/bin/obs-cli item toggle camera-record ; /Users/simonferns/.local/bin/obs-cli item toggle screen-record ; /Users/simonferns/.local/bin/obs-cli scene switch 'Side Cam' ; /Users/simonferns/.local/bin/obs-cli item toggle screen-record-2 ; /Users/simonferns/.local/bin/obs-cli item toggle camera-record-2
