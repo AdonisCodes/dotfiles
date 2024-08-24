@@ -377,6 +377,23 @@ const newOutputPage = `
 - [ ] 🏋️ (${pullupCount}) Dumbell Curls
 - [ ] 🙉 (${pullupCount}x) Pullups
 
+### 85% Day Checklist
+- [ ] Completed entire morning routine
+- [ ] Wrote ~25% of a learning note \`OR\` 3 GH commits (2h)
+- [ ] Made $30 equivalent in Freelancing (2h)
+- [ ] Completed a @Places task - Small prod integration (2h)
+- [ ] Completed cleaning schedule (30m)
+- [ ] Took bath + driving tasks (30m)
+- [ ] Completed entire habit tracker (1h)
+- [ ] Made 5 GH commits for Automa ~250LOC (3h)
+- [ ] Ate my 2k calories (30m)
+- [ ] Aced Standup meeting
+- [ ] Completed a @Places task - Small prod integration (2h)
+- [ ] Completed a @Places task - Small prod integration (2h)
+- [ ] Online interest discovery (no gaming / entertainment) (30m)
+- [ ] Planned full day (15m)
+- [ ] Bed Tasks (10m)
+
 **8:00 AM - 8:30 AM**
 - [ ] Put bed away (3m)
 - [ ] New clothes (5m)
