@@ -56,7 +56,7 @@ function isTriangularNumber(num) {
 // Days from start / 2
 // Pullup Count should work like this:
 // Days from start / 20
-const workoutCount = Math.ceil(daysSinceStartDay / 2);
+const workoutCount = Math.ceil(daysSinceStartDay / 10);
 const pullupCount = Math.ceil(daysSinceStartDay / 20);
 
 outputPage += `### Workout Count: ${workoutCount}
