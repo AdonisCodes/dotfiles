@@ -3,6 +3,7 @@
 .load "modes/resize"
 .load "modes/resize_default"
 .load "modes/ctrl_panel"
+.load "modes/fn_row"
 
 #change focus between external displays (left and right)
 alt - s: yabai -m display --focus west

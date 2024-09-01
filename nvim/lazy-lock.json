@@ -68,5 +68,6 @@
   "tsc.nvim": { "branch": "main", "commit": "548410076322307c80646857778aee050d903b8c" },
   "venv-selector.nvim": { "branch": "regexp", "commit": "47159757b334343fe60f16d52478f827ccefa09d" },
   "vim-illuminate": { "branch": "master", "commit": "5eeb7951fc630682c322e88a9bbdae5c224ff0aa" },
+  "vim-wakatime": { "branch": "master", "commit": "53bba6bb8342de9cbdafc82142a9b5e82008d858" },
   "which-key.nvim": { "branch": "main", "commit": "6e5b5b05085e5d3786096bb03aa465b588ddf17d" }
 }

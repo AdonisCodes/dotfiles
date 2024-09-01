@@ -19,6 +19,7 @@ banner: https://picsum.photos/1000/300
 
 outputPage += "```yaml\n"
 const currentDate = new Date();
+const todayDayCount = currentDate.getDay();
 const currentDateString = `${currentDate.toISOString().split("T")[0]}`
 const referenceDate = new Date("1970-01-01T00:00:00Z");
 const tomorrow = new Date(currentDate.getTime() + 24 * 60 * 60 * 1000);
@@ -27,7 +28,7 @@ const tomorrowString = `${tomorrow.toISOString().split("T")[0]}`
 const timeDifference = currentDate.getTime() - referenceDate.getTime();
 const absoluteDay = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
 
-const startDay = 19907;
+const startDay = 19967;
 
 const daysSinceStartDay = absoluteDay - startDay;
 

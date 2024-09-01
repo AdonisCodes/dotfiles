@@ -10,4 +10,5 @@ return {
   { import = "astrocommunity.colorscheme.dracula-nvim" },
   { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.typescript" },
+  { "wakatime/vim-wakatime", lazy = false },
 }

@@ -10,6 +10,8 @@ source $zshrc_dir/path.zsh
 # Load Aliases
 source $zshrc_dir/aliases.zsh
 
+source $zshrc_dir/prompt.zsh
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/Users/simonferns/mambaforge/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -27,7 +29,6 @@ unset __conda_setup
 if [ -f "/Users/simonferns/mambaforge/etc/profile.d/mamba.sh" ]; then
     . "/Users/simonferns/mambaforge/etc/profile.d/mamba.sh"
 fi
-# <<< conda initialize <<<
 
 
 export PATH=$PATH:/Users/simonferns/.spicetify
@@ -37,5 +38,5 @@ eval "$(goenv init -)"
 export PATH="$GOROOT/bin:$PATH"
 export PATH="$PATH:$GOPATH/bin"
 
-~/.config/zshrc/scripts/launchagent-symlinking.zsh
 
+autoload -U zmv
