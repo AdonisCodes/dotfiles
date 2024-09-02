@@ -368,32 +368,17 @@ if (actionToday) {
 
 
 
+
 const newOutputPage = `
+
 ### Workout Count: ${workoutCount}
 - [ ] 🪵 (${workoutCount}x) Push-ups 
-- [ ] 🧎‍♂️ (${workoutCount}x) Sit-ups 
+- [ ] 🧎 (${workoutCount}x) Sit-ups 
 - [ ] 💪 (${workoutCount}x) Squats 
 - [ ] 🏋️ (${workoutCount}x) Burpees 
-- [ ] 🧘‍♀️ (${workoutCount * 2}s) Plank 
+- [ ] 🧘 (${workoutCount * 2}s) Plank 
 - [ ] 🏋️ (${pullupCount}) Dumbell Curls
 - [ ] 🙉 (${pullupCount}x) Pullups
-
-### 85% Day Checklist
-- [ ] Completed entire morning routine
-- [ ] Wrote ~25% of a learning note \`OR\` 3 GH commits (2h)
-- [ ] Made $30 equivalent in Freelancing (2h)
-- [ ] Completed a @Places task - Small prod integration (2h)
-- [ ] Completed cleaning schedule (30m)
-- [ ] Took bath + driving tasks (30m)
-- [ ] Completed entire habit tracker (1h)
-- [ ] Made 5 GH commits for Automa ~250LOC (3h)
-- [ ] Ate my 2k calories (30m)
-- [ ] Aced Standup meeting
-- [ ] Completed a @Places task - Small prod integration (2h)
-- [ ] Completed a @Places task - Small prod integration (2h)
-- [ ] Online interest discovery (no gaming / entertainment) (30m)
-- [ ] Planned full day (15m)
-- [ ] Bed Tasks (10m)
 
 **8:00 AM - 8:30 AM**
 - [ ] Put bed away (3m)
@@ -404,14 +389,8 @@ const newOutputPage = `
 - [ ] Clothes into washing machine (3m)
 - [ ] Walk outside (10m)
 
-**8:30 AM - 10:30 AM**
-- [ ] One of the following (2h):
-  - Swift learning (odd days)
-  - Productivity learn (2 even days)
-  - Management learn (1 even day)
-
-**10:30 AM - 12:30 PM**
-- [ ] Freelance ($15h)  (1f) (2h)
+**8:30 AM - 12:30 PM**
+- [ ] Freelance tasks 1 (4h)
 
 **12:30 PM - 1:00 PM**
 - [ ] Sweeping (10m)
@@ -426,18 +405,18 @@ const newOutputPage = `
 - [ ] Prep Drive gear (9m)
 
 **1:35 PM - 2:30 PM** 
-  - [ ] (${formatNumber((daysSinceStartDay * 5) / 60)}H) Reading (5m)
+  - [ ] (${formatNumber((daysSinceStartDay * 10) / 60)}H) Reading (10m)
   - [ ] (${formatNumber((daysSinceStartDay * 10) / 60)}H) Meditate (10m)
-  - [ ] (${formatNumber((daysSinceStartDay * 5) / 60)}H) Duolingo (5m)
+  - [ ] (${formatNumber((daysSinceStartDay * 10) / 60)}H) Duolingo (10m)
   - [ ] (${formatNumber((daysSinceStartDay * 10) / 60)}H) Touchtype (10m)
-  - [ ] Brain Dumping (5m) [[Brain Dumps/${tomorrowString}]]
-  - [ ] Learn new Word (5m) [[New Words/${tomorrowString}]]
   - [ ] Workout (10m) [[#Workout Count: ${workoutCount}]]
+  - [ ] Brain Dumping (5m) [[Brain Dumps/${tomorrowString}]]
   - [ ] Measure Weight (2m)
   - [ ] Claim Sweat + Sweatcoin (3m)
 
 **2:30 PM - 4:30 PM**
-- [ ] Freelance Raya (1f) (2h)
+- [ ] Swift Learning (odd+1) | Productivity (1 ev) | Management (1 ev)
+
 
 **4:30 PM - 5:00 PM**
 - [ ] 2.1k calories (30m)
@@ -446,18 +425,14 @@ const newOutputPage = `
 - [ ] Automa 5 commits (3h)
 
 **8:00 PM - 12:00 AM**
-- [ ] Raya Meeting (30m)
-- [ ] Freelance Raya (1/f) (2h)
-- [ ] Freelance Raya (1/f) (2h)
+- [ ] Freelancing tasks 2 (4h)
 
 **12:00 AM - 1:00 AM**
 - [ ] Explore things (30m)
-- [ ] Do planning Tasks (30m)
-	- [ ] Plan out Next Day + Task list on [[Todos]] (20m)
-	- [ ] Plan out Clothes for the next day (3m)
-	- [ ] Brush Teeth + Hands (4m)
-	- [ ] Make Bed (3m)
+- [ ] Plan out Next Day + Task list on [[Todos]] (20m)
+- [ ] Plan out Clothes for the next day (3m)
+- [ ] Brush Teeth + Hands (4m)
+- [ ] Make Bed + Sleep (3m)
 `
 
 console.log(newOutputPage)
-newOutputPage;

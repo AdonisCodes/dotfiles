@@ -40,3 +40,4 @@ export PATH="$PATH:$GOPATH/bin"
 
 
 autoload -U zmv
+
