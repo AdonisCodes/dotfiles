@@ -133,6 +133,7 @@ if [[ $- == *i* ]]; then
     alias gcm="git commit -m"
     alias gcz="git cz commit"
     alias gaa="git add --all"
+    alias gs="git status"
     alias ga="git add"
     alias gp="git push"
     alias gpf="git push --force"
@@ -163,4 +164,4 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 eval "$(zoxide init zsh)" # better cd
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/shre/zsh-autosuggestions/zsh-autosuggestions.zsh

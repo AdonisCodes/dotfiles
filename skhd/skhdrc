@@ -23,3 +23,5 @@ shift + alt - n : yabai -m window --space next;
 ctrl + alt - q : brew services stop yabai
 ctrl + alt - s : brew services start yabai
 ctrl + alt - r : brew services restart yabai
+
+cmd - k : skhd -k "c" ; skhd -k "l" ; skhd -k "e" ; skhd -k "a" ; skhd -k "r" ; skhd -k "return" 

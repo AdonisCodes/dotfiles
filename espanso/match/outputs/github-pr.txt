@@ -27,3 +27,17 @@ _List the steps to do the test_
 **Results**
 
 _Paste test output or videos or screenshots of the results_
+
+## Review Checklist
+## Review Checklist
+- [ ] **Used correct typing:** Ensure that all variables, function parameters, and return types are explicitly typed and follow the correct typing conventions.
+- [ ] **Deployments work as expected:** Verify that the deployment pipeline functions correctly without issues in staging and production environments.
+- [ ] **Full test coverage:** Confirm that all new and modified code is covered by unit tests, integration tests, and end-to-end tests. Ensure that test coverage is at least 90% 
+- [ ] **Code structure correctness:** Check that the code follows best practices for organization, naming conventions, and modularity. Ensure that it is easy to maintain and extend.
+- [ ] **Documentation is updated:** Ensure that all relevant documentation, including code comments, README files, and external documentation, is updated to reflect the changes introduced in this PR.
+- [ ] **Adheres to coding standards:** Verify that the code follows the project's coding standards and style guidelines (e.g., linting, formatting).
+- [ ] **Handles errors gracefully:** Ensure that the code includes proper error handling and that edge cases are considered and tested.
+- [ ] **Security considerations:** Verify that the code follows security best practices, including proper handling of sensitive data, input validation, and avoiding common vulnerabilities.
+- [ ] **Performance impact assessed:** Check if there are any potential performance bottlenecks or areas for optimization introduced by this change.
+- [ ] **Cleanup work:** Ensure that any temporary or noise files, such as debug logs, unused assets, or obsolete code, are removed or cleaned up as part of the PR.
+

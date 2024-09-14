@@ -435,5 +435,63 @@ const newOutputPage = `
 - [ ] Make Bed + Sleep (3m)
 `
 
-console.log(newOutputPage)
-newOutputPage
+let newNewOutputPage = `
+
+### Workout Count: ${workoutCount}
+- [ ] 🪵 (${workoutCount}x) Push-ups 
+- [ ] 🧎 (${workoutCount}x) Sit-ups 
+- [ ] 💪 (${workoutCount}x) Squats 
+- [ ] 🏋️ (${workoutCount}x) Burpees 
+- [ ] 🧘 (${workoutCount * 2}s) Plank 
+- [ ] 🏋️ (${pullupCount}) Dumbell Curls
+- [ ] 🙉 (${pullupCount}x) Pullups
+
+**6pm - 7pm**
+- [ ] Make Bed (3m)
+- [ ] 1.5k Steps MIN (20m)
+- [ ] Quick Shower (10m)
+- [ ] New Clothes (5m)
+- [ ] Hands + Teeth (5m)
+- [ ] Coffee + Curtains (5m)
+- [ ] Clothes + Prepare Work (10m)
+
+**7pm - 11pm**
+- [ ] Work Session 1
+
+**11pm - 11:30pm**
+- [ ] 500 Calories (10m)
+- [ ] Wash Up (10m)
+- [ ] Clean Desk (10m)
+
+
+**11:30pm - 4am**
+- [ ] Work Session 2
+
+**4am - 5am**
+- [ ] (${formatNumber((daysSinceStartDay * 10) / 60)}H) Reading (10m)
+- [ ] (${formatNumber((daysSinceStartDay * 10) / 60)}H) Meditate (10m)
+- [ ] (${formatNumber((daysSinceStartDay * 10) / 60)}H) Mandarin Learning (10m)
+- [ ] (${formatNumber((daysSinceStartDay * 10) / 60)}H) Touchtype (10m)
+- [ ] Workout (15m) [[#Workout Count: ${workoutCount}]]
+- [ ] Quick Walking Session (5m)
+
+**5am - 6am**
+- [ ] 1.7k Calories (20m)
+- [ ] Bath (20m)
+- [ ] Sweep (10m)
+- [ ] Desktop Cleaning (10m)
+
+**6am - 9:30am**
+- [ ] Learning / Automa
+
+**9:30am - 10am**
+- [ ] Task Planning (20m)
+- [ ] Prep (10m)
+  - [ ] Clothes
+  - [ ] Teeth
+  - [ ] Bed
+  - [ ] Washing
+`
+
+console.log(newNewOutputPage)
+newNewOutputPage

@@ -55,11 +55,7 @@ Content-Type: ${s.type||"application/octet-stream"}\r
         end repeat
       end if
       ${t}
-    end tell`}async function z0(t){await(0,I0.closeMainWindow)(),await(0,L0.runAppleScript)(t)}async function M0({trackIds:t,artistIds:e}){let{spotifyClient:a}=Wt();try{return await a.getRecommendations({seedTracks:t.join(),seedArtists:e?.join()})}catch(r){let d=y1(r);throw console.log("getRecommendations.ts Error:",d),new Error(d)}}async function $0({trackIds:t=[],artistIds:e=[]}={}){let{spotifyClient:a}=Wt();try{let d=(await M0({trackIds:t,artistIds:e}))?.tracks;if(d)try{await a.putMePlayerPlay({uris:d.flatMap(s=>s.uri)})}catch(s){if(y1(s)?.toLocaleLowerCase().includes("no active device")){let m=U0(`tell application "Spotify"
-          launch
-          delay 3
-          play track "${d[0].uri}"
-  end tell`);await z0(m)}}}catch(r){let d=y1(r);throw console.log("startRadio.ts Error:",d),new Error(d)}}async function W0(){await q0();let t=await F0(),e=!t||!t?.item,a=t?.currently_playing_type!=="episode",r=t?.item?.id;if(e)return await(0,za.showHUD)("Nothing is currently playing");if(!a&&!r)return await(0,za.showHUD)("Radio based on episodes isn't available yet");try{await $0({trackIds:r?[r]:void 0}),await(0,za.showHUD)("Playing Radio")}catch(d){let s=y1(d);await(0,za.showHUD)(s)}}
+    end tell`}async function z0(t){await(0,I0.closeMainWindow)(),await(0,L0.runAppleScript)(t)}async function M0({trackIds:t,artistIds:e}){let{spotifyClient:a}=Wt();try{return await a.getRecommendations({seedTracks:t.join(),seedArtists:e?.join()})}catch(r){let d=y1(r);throw console.log("getRecommendations.ts Error:",d),new Error(d)}}async function $0({trackIds:t=[],artistIds:e=[]}={}){let{spotifyClient:a}=Wt();try{let d=(await M0({trackIds:t,artistIds:e}))?.tracks;if(d)try{await a.putMePlayerPlay({uris:d.flatMap(s=>s.uri)})}catch(s){if(y1(s)?.toLocaleLowerCase().includes("no active device")){let m=U0(`play track "${d[0].uri}"`);await z0(m)}}}catch(r){let d=y1(r);throw console.log("startRadio.ts Error:",d),new Error(d)}}async function W0(){await q0();let t=await F0(),e=!t||!t?.item,a=t?.currently_playing_type!=="episode",r=t?.item?.id;if(e)return await(0,za.showHUD)("Nothing is currently playing");if(!a&&!r)return await(0,za.showHUD)("Radio based on episodes isn't available yet");try{await $0({trackIds:r?[r]:void 0}),await(0,za.showHUD)("Playing Radio")}catch(d){let s=y1(d);await(0,za.showHUD)(s)}}
 /*! Bundled license information:
 
 media-typer/index.js:
